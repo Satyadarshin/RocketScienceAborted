@@ -1,0 +1,623 @@
+{
+    "best_novel": [{
+            "year": 1953,
+            "winner": { "author": "Alfred Bester", "title": "The Demolished Man" },
+            "shortlisted": []
+        },
+        {
+            "year": 1955,
+            "winner": { "author": "Mark Clifton, Frank Riley", "title": "They'd Rather Be Right (also known as The Forever Machine)" },
+            "shortlisted": []
+        },
+        {
+            "year": 1956,
+            "winner": { "author": "Robert A.Heinlein", "title": "Double Star" },
+            "shortlisted": [
+                { "author": "Isaac Asimov", "title": "The End of Eternity" },
+                { "author": "Cyril M.Kornbluth", "title": "Not This August" },
+                { "author": "Leigh Brackett", "title": "The Long Tomorrow" }
+            ]
+        },
+        {
+            "year": 1958,
+            "winner": { "author": "Fritz Leiber", "title": "The Big Time" },
+            "shortlisted": []
+        },
+        {
+            "year": 1959,
+            "winner": { "author": "James Blish", "title": "A Case of Conscience" },
+            "shortlisted": [
+                { "author": "Poul Anderson", "title": "We Have Fed Our Sea (also known as The Enemy Stars)" },
+                { "author": "Algis Budrys", "title": "Who" },
+                { "author": "Robert A.Heinlein", "title": "Have Space Suit— Will Travel" },
+                { "author": "Robert Sheckley", "title": "Time Killer(also known as Immortality, Inc.)" }
+            ]
+        },
+        {
+            "year": 1960,
+            "winner": { "author": "Robert A.Heinlein", "title": "Starship Troopers" },
+            "shortlisted": [
+                { "author": "Gordon R.Dickson", "title": "Dorsai! (also known as The Genetic General)" },
+                { "author": "Murray Leinster", "title": "The Pirates of Ersatz(also known as The Pirates of Zan)" },
+                { "author": "Mark Phillips", "title": "That Sweet Little Old Lady(also known as Brain Twister)" },
+                { "author": "Kurt Vonnegut", "title": "The Sirens of Titan" }
+            ]
+        },
+        {
+            "year": 1961,
+            "winner": { "author": "Walter M.Miller, Jr.*A Canticle for Leibowitz" },
+            "shortlisted": [
+                { "author": "Poul Anderson", "title": "The High Crusade" },
+                { "author": "Algis Budrys", "title": "Rogue Moon" },
+                { "author": "Harry Harrison", "title": "Deathworld" },
+                { "author": "Theodore Sturgeon", "title": "Venus Plus X" }
+            ]
+        },
+        {
+            "year": 1962,
+            "winner": { "author": "Robert A.Heinlein", "title": "Stranger in a Strange Land" },
+            "shortlisted": [
+                { "author": "Daniel F.Galouye", "title": "Dark Universe" },
+                { "author": "Harry Harrison", "title": "Planet of the Damned (also known as Sense of Obligation)" },
+                { "author": "Clifford D.Simak", "title": "The Fisherman(also known as Time Is the Simplest Thing)" },
+                { "author": "James White", "title": "Second Ending" }
+            ]
+        },
+        {
+            "year": 1963,
+            "winner": { "author": "Philip K.Dick", "title": "The Man in the High Castle" },
+            "shortlisted": [
+                { "author": "Marion Zimmer Bradley", "title": "The Sword of Aldones" },
+                { "author": "Arthur C.Clarke", "title": "A Fall of Moondust" },
+                { "author": "H.Beam Piper", "title": "Little Fuzzy" },
+                { "author": "Jean Bruller", "title": "Sylva" }
+            ]
+        }, {
+            "year": 1964,
+            "winner": { "author": "Clifford D.Simak", "title": "Here Gather the Stars(also known as Way Station)" },
+            "shortlisted": [
+                { "author": "Robert A.Heinlein", "title": "Glory Road" },
+                { "author": "Andre Norton", "title": "Witch World" },
+                { "author": "Frank Herbert", "title": "Dune World" },
+                { "author": "Kurt Vonnegut", "title": "Cat's Cradle" }
+            ]
+        },
+        {
+            "year": 1965,
+            "winner": { "author": "Fritz Leiber", "title": "The Wanderer" },
+            "shortlisted": [
+                { "author": "John Brunner", "title": "The Whole Man" },
+                { "author": "Edgar Pangborn", "title": "Davy" },
+                { "author": "Cordwainer Smith", "title": "The Planet Buyer (also known as The Boy Who Bought Old Earth)" }
+            ]
+        },
+        {
+            "year": 1966,
+            "winner": { "author": "Frank Herbert", "title": "Dune" },
+            "shortlisted": [
+                { "author": "Roger Zelazny", "title": "...And Call Me Conrad (also known as This Immortal)" },
+                { "author": "John Brunner", "title": "The Squares of the City" },
+                { "author": "Robert A.Heinlein", "title": "The Moon Is a Harsh Mistress" },
+                { "author": "Edward E.Smith", "title": "Skylark DuQuesne" }
+            ]
+        },
+        {
+            "year": 1967,
+            "winner": { "author": "Robert A.Heinlein", "title": "The Moon Is a Harsh Mistress" },
+            "shortlisted": [
+                { "author": "Samuel R.Delany", "title": "Babel-17" },
+                { "author": "Randall Garrett", "title": "Too Many Magicians" },
+                { "author": "Daniel Keyes", "title": "Flowers for Algernon" },
+                { "author": "James H.Schmitz", "title": "The Witches of Karres" },
+                { "author": "Thomas Burnett Swann", "title": "Day of the Minotaur" }
+            ]
+        },
+        {
+            "year": 1968,
+            "winner": { "author": "Roger Zelazny", "title": "Lord of Light" },
+            "shortlisted": [
+                { "author": "Samuel R.Delany", "title": "The Einstein Intersection" },
+                { "author": "Piers Anthony", "title": "Chthon" },
+                { "author": "Chester Anderson", "title": "The Butterfly Kid" },
+                { "author": "Robert Silverberg", "title": "Thorns" }
+            ]
+        },
+        {
+            "year": 1969,
+            "winner": { "author": "John Brunner", "title": "Stand on Zanzibar" },
+            "shortlisted": [
+                { "author": "Alexei Panshin", "title": "Rite of Passage" },
+                { "author": "Samuel R.Delany", "title": "Nova" },
+                { "author": "R.A.Lafferty", "title": "Past Master" },
+                { "author": "Clifford D.Simak", "title": "The Goblin Reservation" }
+            ]
+        },
+        {
+            "year": 1970,
+            "winner": { "author": "Ursula K.Le Guin", "title": "The Left Hand of Darkness" },
+            "shortlisted": [
+                { "author": "Robert Silverberg", "title": "Up the Line" },
+                { "author": "Piers Anthony", "title": "Macroscope" },
+                { "author": "Kurt Vonnegut", "title": "Slaughterhouse - Five" },
+                { "author": "Norman Spinrad", "title": "Bug Jack Barron" }
+            ]
+        },
+        {
+            "year": 1971,
+            "winner": { "author": "Larry Niven", "title": "Ringworld" },
+            "shortlisted": [
+                { "author": "Poul Anderson", "title": "Tau Zero" },
+                { "author": "Robert Silverberg", "title": "Tower of Glass" },
+                { "author": "Wilson Tucker", "title": "The year of the Quiet Sun" },
+                { "author": "Hal Clement", "title": "Star Light" }
+            ]
+        },
+        {
+            "year": 1972,
+            "winner": { "author": "Philip José Farmer", "title": "To Your Scattered Bodies Go" },
+            "shortlisted": [{ "author": "Ursula K.Le Guin", "title": "The Lathe of Heaven" },
+                { "author": "Anne McCaffrey", "title": "Dragonquest" },
+                { "author": "Roger Zelazny", "title": "Jack of Shadows" },
+                { "author": "Robert Silverberg", "title": "A Time of Changes" }
+            ]
+        },
+        {
+            "year": 1973,
+            "winner": { "author": "Isaac Asimov", "title": "The Gods Themselves" },
+            "shortlisted": [
+                { "author": "David Gerrold", "title": "When HARLIE Was One" },
+                { "author": "Poul Anderson", "title": "There Will Be Time" },
+                { "author": "Robert Silverberg", "title": "The Book of Skulls" },
+                { "author": "Robert Silverberg", "title": "Dying Inside" },
+                { "author": "Clifford D.Simak", "title": "A Choice of Gods" }
+            ]
+        },
+        {
+            "year": 1974,
+            "winner": { "author": "Arthur C.Clarke", "title": "Rendezvous with Rama" },
+            "shortlisted": [
+                { "author": "Robert A.Heinlein", "title": "Time Enough for Love" },
+                { "author": "Larry Niven", "title": "Protector" },
+                { "author": "Poul Anderson", "title": "The People of the Wind" },
+                { "author": "David Gerrold", "title": "The Man Who Folded Himself" }
+            ]
+        },
+        {
+            "year": 1975,
+            "winner": { "author": "Ursula K.Le Guin", "title": "The Dispossessed" },
+            "shortlisted": [
+                { "author": "Poul Anderson", "title": "Fire Time" },
+                { "author": "Philip K.Dick", "title": "Flow My Tears, the Policeman Said" },
+                { "author": "Larry Niven, Jerry Pournelle", "title": "The Mote in God's Eye" },
+                { "author": "Christopher Priest", "title": "Inverted World" }
+            ]
+        },
+        {
+            "year": 1976,
+            "winner": { "author": "Joe Haldeman", "title": "The Forever War" },
+            "shortlisted": [
+                { "author": "Roger Zelazny", "title": "Doorways in the Sand" },
+                { "author": "Jerry Pournelle, Larry Niven", "title": "Inferno" },
+                { "author": "Alfred Bester", "title": "The Computer Connection(also known as The Indian Giver)" },
+                { "author": "Robert Silverberg", "title": "The Stochastic Man" }
+            ]
+        },
+        {
+            "year": 1977,
+            "winner": { "author": "Kate Wilhelm", "title": "Where Late the Sweet Birds Sang" },
+            "shortlisted": [{
+                    "author": "Joe Haldeman",
+                    "title": "Mindbridge"
+                },
+                { "author": "Frank Herbert", "title": "Children of Dune" },
+                { "author": "Frederik Pohl", "title": "Man Plus" },
+                { "author": "Robert Silverberg", "title": "Shadrach in the Furnace" }
+            ]
+        },
+        {
+            "year": 1978,
+            "winner": { "author": "Frederik Pohl", "title": "Gateway" },
+            "shortlisted": [
+                { "author": "Marion Zimmer Bradley", "title": "The Forbidden Tower" },
+                { "author": "Jerry Pournelle, Larry Niven", "title": "Lucifer 's Hammer" },
+                { "author": "Gordon R.Dickson", "title": "Time Storm" },
+                { "author": "George R.R.Martin", "title": "Dying of the Light" }
+            ]
+        },
+        {
+            "year": 1979,
+            "winner": { "author": "Vonda N.McIntyre", "title": "Dreamsnake" },
+            "shortlisted": [
+                { "author": "Anne McCaffrey", "title": "The White Dragon" },
+                { "author": "C.J.Cherryh", "title": "The Faded Sun: Kesrith" },
+                { "author": "Tom Reamy", "title": "Blind Voices" }
+            ]
+        },
+        {
+            "year": 1980,
+            "winner": { "author": "Arthur C.Clarke", "title": "The Fountains of Paradise" },
+            "shortlisted": [{ "author": "John Varley", "title": "Titan" },
+                { "author": "Frederik Pohl", "title": "Jem" },
+                { "author": "Patricia A.McKillip", "title": "Harpist in the Wind" },
+                { "author": "Thomas Disch", "title": "On Wings of Song" }
+            ]
+        },
+        {
+            "year": 1981,
+            "winner": { "author": "Joan D.Vinge", "title": "The Snow Queen" },
+            "shortlisted": [{ "author": "Robert Silverberg", "title": "Lord Valentine 's Castle" },
+                { "author": "Larry Niven", "title": "The Ringworld Engineers" },
+                { "author": "Frederik Pohl", "title": "Beyond the Blue Event Horizon" },
+                { "author": "John Varley", "title": "Wizard" }
+            ]
+        },
+        {
+            "year": 1982,
+            "winner": { "author": "C.J.Cherryh", "title": "Downbelow Station" },
+            "shortlisted": [
+                { "author": "Gene Wolfe", "title": "The Claw of the Conciliator" },
+                { "author": "Julian May", "title": "The Many - Colored Land" },
+                { "author": "Clifford D.Simak", "title": "Project Pope" },
+                { "author": "John Crowley", "title": "Little, Big" }
+            ]
+        },
+        {
+            "year": 1983,
+            "winner": { "author": "Isaac Asimov ", "title ": "Foundation 's Edge" },
+            "shortlisted": [
+                { "author": "C.J.Cherryh", "title": "The Pride of Chanur" },
+                { "author": "Arthur C.Clarke", "title": "2010: Odyssey Two" },
+                { "author": "Robert A.Heinlein", "title": "Friday" },
+                { "author": "Donald Kingsbury", "title": "Courtship Rite" },
+                { "author": "Gene Wolfe", "title": "The Sword of the Lictor" }
+            ]
+        },
+        {
+            "year": 1984,
+            "winner": { "author": "David Brin", "title": "Startide Rising" },
+            "shortlisted": [
+                { "author": "R.A.MacAvoy", "title": "Tea with the Black Dragon" },
+                { "author": "John Varley", "title": "Millennium" },
+                { "author": "Anne McCaffrey", "title": "Moreta: Dragonlady of Pern" },
+                { "author": "Isaac Asimov", "title": "The Robots of Dawn" }
+            ]
+        },
+        {
+            "year": 1985,
+            "winner": { "author": "William Gibson", "title": "Neuromancer" },
+            "shortlisted": [
+                { "author": "David R.Palmer", "title": "Emergence" },
+                { "author": "Vernor Vinge", "title": "The Peace War" },
+                { "author": "Robert A.Heinlein", "title": "Job: A Comedy of Justice" },
+                { "author": "Larry Niven", "title": "The Integral Trees" }
+            ]
+        },
+        {
+            "year": 1986,
+            "winner": { "author": "Orson Scott Card", "title": "Ender 's Game" },
+            "shortlisted": [
+                { "author": "C.J.Cherryh", "title": "Cuckoo 's Egg" },
+                { "author": "David Brin", "title": "The Postman" },
+                { "author": "Jerry Pournelle, Larry Niven", "title": "Footfall" },
+                { "author": "Greg Bear", "title": "Blood Music" }
+            ]
+        },
+        {
+            "year": 1987,
+            "winner": { "author": "Orson Scott Card ", "title": "Speaker for the Dead" },
+            "shortlisted": [
+                { "author": "Bob Shawn", "title": "The Ragged Astronauts" },
+                { "author": "William Gibson", "title": "Count Zero" },
+                { "author": "Vernor Vinge", "title": "Marooned in Realtime" },
+                { "author": "L.Ron Hubbard", "title": "Black Genesis" }
+            ]
+        },
+        {
+            "year": 1988,
+            "winner": { "author": "David Brin", "title": "The Uplift War" },
+            "shortlisted": [
+                { "author": "George Alec Effinger", "title": "When Gravity Fails" },
+                { "author": "Orson Scott Card", "title": "Seventh Son" },
+                { "author": "Greg Bear", "title": "The Forge of God" },
+                { "author": "Gene Wolfe", "title": "The Urth of the New Sun" }
+            ]
+        },
+        {
+            "year": 1989,
+            "winner": { "author": "C.J.Cherryh", "title": "Cyteen" },
+            "shortlisted": [
+                { "author": "Orson Scott Card", "title": "Red Prophet" },
+                { "author": "Lois McMaster Bujold", "title": "Falling Free" },
+                { "author": "Bruce Sterling", "title": "Islands in the Net" },
+                { "author": "William Gibson", "title": "Mona Lisa Overdrive" }
+            ]
+        },
+        {
+            "year": 1990,
+            "winner": { "author": "Dan Simmons", "title": "Hyperion" },
+            "shortlisted": [
+                { "author": "George Alec Effinger", "title": "A Fire in the Sun" },
+                { "author": "Orson Scott Card", "title": "Prentice Alvin" },
+                { "author": "Poul Anderson", "title": "The Boat of a Million years" },
+                { "author": "Sheri S.Tepper", "title": "Grass" }
+            ]
+        },
+        {
+            "year": 1991,
+            "winner": { "author": "Lois McMaster Bujold", "title": "The Vor Game" },
+            "shortlisted": [
+                { "author": "David Brin", "title": "Earth" },
+                { "author": "Dan Simmons", "title": "The Fall of Hyperion" },
+                { "author": "Michael P.Kube - McDowell", "title": "The Quiet Pools" },
+                { "author": "Greg Bear", "title": "Queen of Angels" }
+            ]
+        },
+        {
+            "year": 1992,
+            "winner": { "author": "Lois McMaster Bujold", "title": "Barrayar" },
+            "shortlisted": [
+                { "author": "Emma Bull", "title": "Bone Dance" },
+                { "author": "Anne McCaffrey", "title": "All the Weyrs of Pern" },
+                { "author": "Joan D.Vinge", "title": "The Summer Queen" },
+                { "author": "Orson Scott Card", "title": "Xenocide" },
+                { "author": "Michael Swanwick", "title": "Stations of the Tide" }
+            ]
+        },
+        {
+            "year": 1993,
+            "winner": { "author": "Vernor Vinge", "title": "A Fire Upon the Deep" },
+            "shortlisted": [
+                { "author": "Connie Willis", "title": "Doomsday Book" },
+                { "author": "Kim Stanley Robinson", "title": "Red Mars" },
+                { "author": "Maureen F.McHugh", "title": "China Mountain Zhang" },
+                { "author": "John Varley", "title": "Steel Beach" }
+            ]
+        },
+        {
+            "year": 1994,
+            "winner": { "author": "Kim Stanley Robinson", "title": "Green Mars" },
+            "shortlisted": [
+                { "author": "Greg Bear", "title": "Moving Mars" },
+                { "author": "Nancy Kress", "title": "Beggars in Spain" },
+                { "author": "David Brin", "title": "Glory Season" },
+                { "author": "William Gibson", "title": "Virtual Light" }
+            ]
+        },
+        {
+            "year": 1995,
+            "winner": { "author": "Lois McMaster Bujold", "title": "Mirror Dance" },
+            "shortlisted": [
+                { "author": "John Barnes", "title": "Mother of Storms" },
+                { "author": "Nancy Kress", "title": "Beggars and Choosers" },
+                { "author": "Michael Bishop", "title": "Brittle Innings" },
+                { "author": "James K.Morrow", "title": "Towing Jehovah" }
+            ]
+        },
+        {
+            "year": 1996,
+            "winner": { "author": "Neal Stephenson", "title": "The Diamond Age" },
+            "shortlisted": [
+                { "author": "Stephen Baxter", "title": "The Time Ships" },
+                { "author": "David Brin", "title": "Brightness Reef" },
+                { "author": "Robert J.Sawyer", "title": "The Terminal Experiment(also known as Hobson 's Choice)" },
+                { "author": "Connie Willis", "title": "Remake" }
+            ]
+        },
+        {
+            "year": 1997,
+            "winner": { "author": "Kim Stanley Robinson", "title": "Blue Mars" },
+            "shortlisted": [
+                { "author": "Lois McMaster Bujold ", "title ": "Memory" },
+                { "author": "Elizabeth Moon", "title": "Remnant Population" },
+                { "author": "Robert J.Sawyer ", "title ": "Starplex" },
+                { "author": "Bruce Sterling", "title": "Holy Fire" }
+            ]
+        },
+        {
+            "year": 1998,
+            "winner": { "author": "Joe Haldeman", "title": "Forever Peace" },
+            "shortlisted": [
+                { "author": "Walter Jon Williams ", "title ": "City on Fire" },
+                { "author": "Dan Simmons", "title": "The Rise of Endymion" },
+                { "author": "Robert J.Sawyer", "title ": "Frameshift" },
+                { "author": "Michael Swanwick", "title": "Jack Faust" }
+            ]
+        },
+        {
+            "year": 1999,
+            "winner": { "author": "Connie Willis", "title": "To Say Nothing of the Dog" },
+            "shortlisted": [
+                { "author": "Mary Doria Russell ", "title ": "Children of God" },
+                { "author": "Robert Charles Wilson", "title": "Darwinia" },
+                { "author": "Bruce Sterling ", "title ": "Distraction" },
+                { "author": "Robert J.Sawyer", "title": "Factoring Humanity" }
+            ]
+        },
+        {
+            "year": 2000,
+            "winner": { "author": "Vernor Vinge", "title": "A Deepness in the Sky" },
+            "shortlisted": [
+                { "author": "Lois McMaster Bujold ", "title ": "A Civil Campaign" },
+                { "author": "Neal Stephenson", "title": "Cryptonomicon" },
+                { "author": "Greg Bear ", "title ": "Darwin 's Radio" },
+                { "author": "J.K.Rowling", "title": "Harry Potter and the Prisoner of Azkaban" }
+            ]
+        },
+        {
+            "year": 2001,
+            "winner": { "author": "J.K.Rowling", "title": "Harry Potter and the Goblet of Fire" },
+            "shortlisted": [
+                { "author": "George R.R.Martin ", "title ": "A Storm of Swords" },
+                { "author": "Robert J.Sawyer", "title": "Calculating God" },
+                { "author": "Ken MacLeod ", "title ": "The Sky Road" },
+                { "author": "Nalo Hopkinson", "title": "Midnight Robber" }
+            ]
+        },
+        {
+            "year": 2002,
+            "winner": { "author": "Neil Gaiman ", "title ": "American Gods" },
+            "shortlisted": [
+                { "author": "Lois McMaster Bujold", "title": "The Curse of Chalion" },
+                { "author": "Connie Willis", "title": "Passage" },
+                { "author": "China Miéville", "title": "Perdido Street Station" },
+                { "author": "Robert Charles Wilson", "title": "The Chronoliths" },
+                { "author": "Ken MacLeod", "title": "Cosmonaut Keep" }
+            ]
+        },
+        {
+            "year": 2003,
+            "winner": { "author": "Robert J.Sawyer", "title": "Hominids" },
+            "shortlisted": [{
+                    "author": "David Brin",
+                    "title": "Kiln People(also known as Kil 'n People)"
+                },
+                { "author": "Michael Swanwick", "title": "Bones of the Earth" },
+                { "author": "China Miéville", "title": "The Scar" },
+                { "author": "Kim Stanley Robinson", "title": "The years of Rice and Salt" }
+            ]
+        },
+        {
+            "year": 2004,
+            "winner": { "author": "Lois McMaster Bujold", "title": "Paladin of Souls" },
+            "shortlisted": [
+                { "author": "Dan Simmon ", "title ": "Ilium" },
+                { "author": "Charles Stross", "title": "Singularity Sky" },
+                { "author": "Robert Charles Wilson ", "title ": "Blind Lake" },
+                { "author": "Robert J.Sawyer", "title": "Humans" }
+            ]
+        },
+        {
+            "year": 2005,
+            "winner": { "author": "Susanna Clarke", "title": "Jonathan Strange & Mr Norrell" },
+            "shortlisted": [
+                { "author": "Ian McDonald", "title": "River of Gods" },
+                { "author": "Iain M.Banks", "title": "The Algebraist" },
+                { "author": "Charles Stross", "title": "Iron Sunrise" },
+                { "author": "China Miéville", "title": "Iron Council" }
+            ]
+        },
+
+        {
+            "year": 2006,
+            "winner": { "author": "Robert Charles Wilson", "title": "Spin" },
+            "shortlisted": [
+                { "author": "Ken MacLeod ", "title ": "Learning the World" },
+                { "author": "George R.R.Martin", "title": "A Feastfor Crows" },
+                { "author": "John Scalzi", "title": "Old Man's War" },
+                { "author": "Charles Stross", "title": "Accelerando" }
+            ]
+        },
+        {
+            "year": 2007,
+            "winner": { "author": "Vernor Vinge", "title": "Rainbows End" },
+            "shortlisted": [
+                { "author": " Charles Stross ", "title ": "Glasshouse" },
+                { "author": "Naomi Novik", "title": "His Majesty 's Dragon" },
+                { "author": "Michael F.Flynn", "title": "Eifelheim" },
+                { "author": "Peter Watts ", "title ": "Blindsight" }
+            ]
+        },
+        {
+            "year": 2008,
+            "winner": { "author": "Michael Chabon", "title": "The Yiddish Policemen 's Union" },
+            "shortlisted": [
+                { "author": "John Scalzi", "title": "The Last Colony" },
+                { "author": "Charles Stross ", "title ": "Halting State" },
+                { "author": "Robert J.Sawyer", "title": "Rollback" },
+                { "author": "an McDonald ", "title ": "Brasyl" }
+            ]
+        },
+        {
+            "year": 2009,
+            "winner": { "author": "Neil Gaiman", "title": "The Graveyard Book" },
+            "shortlisted": [
+                { "author": "Cory Doctorow ", "title ": "Little Brother" },
+                { "author": "Neal Stephenson", "title": "Anathem" },
+                { "author": "Charles Stross ", "title ": "Saturn 's Children" },
+                { "author": "John Scalzi", "title": "Zoe 's Tale" }
+            ]
+        },
+        {
+            "year": 2010,
+            "winner": { "author": "Paolo Bacigalupi", "title": "The Windup Girl" },
+            "shortlisted": [
+                { "author": "China Miéville ", "title ": "The City & the City" },
+                { "author": "Cherie Priest", "title": "Boneshaker" },
+                { "author": " Robert J.Sawyer ", "title ": "Wake" },
+                { "author": "Catherynne M.Valente", "title": "Palimpsest" },
+                { "author": "Robert Charles Wilson ", "title ": "Julian Comstock: A Story of 22 nd - Century America" }
+            ]
+        },
+        {
+            "year": 2011,
+            "winner": { "author": "Connie Willis", "title": "Blackout / All Clear" },
+            "shortlisted": [
+                { "author": "Lois McMaster Bujold ", "title ": "Cryoburn" },
+                { "author": "Ian McDonald", "title": "The Dervish House" },
+                { "author": "Mira Grant ", "title ": "Feed" },
+                { "author": "N.K.Jemisin", "title": "The Hundred Thousand Kingdoms" }
+            ]
+        },
+        {
+            "year": 2012,
+            "winner": { "author": "Jo Walton", "title": "Among Others" },
+            "shortlisted": [
+                { "author": "George R.R.Martin ", "title ": "A Dance with Dragons" },
+                { "author": "Mira Grant", "title": "Deadline" },
+                { "author": "China Miéville ", "title ": "Embassytown" },
+                { "author": "James S.A.Corey", "title": "Leviathan Wakes" }
+            ]
+        },
+        {
+            "year": 2013,
+            "winner": { "author": "John Scalzi", "title": "Redshirts" },
+            "shortlisted": [
+                { "author": "Kim Stanley Robinson ", "title ": "2312" },
+                { "author": "Mira Grant", "title": "Blackout" },
+                { "author": "Lois McMaster Bujold ", "title ": "Captain Vorpatril 's Alliance" },
+                { "author": "Saladin Ahmed", "title": "Throne of the Crescent Moon" }
+            ]
+        },
+        {
+            "year": 2014,
+            "winner": { "author": "Ann Leckie", "title": "Ancillary Justice" },
+            "shortlisted": [
+                { "author": "Charles Stross ", "title ": "Neptune 's Brood" },
+                { "author": "Mira Grant", "title": "Parasite" },
+                { "author": "Larry Correia ", "title ": "Warbound" },
+                { "author": "Robert Jordan, Brandon Sanderson", "title": "The Wheel of Time" }
+            ]
+        },
+        {
+            "year": 2015,
+            "winner": { "author": "Cixin Liu", "title": "The Three - Body Problem" },
+            "shortlisted": [
+                { "author": "Katherine Addison ", "title ": "The Goblin Emperor" },
+                { "author": "Kevin J.Anderson", "title": "The Dark Between the Stars" },
+                { "author": "Jim Butcher ", "title ": "Skin Game" },
+                { "author": "Ann Leckie", "title": "Ancillary Sword" }
+            ]
+        },
+        {
+            "year": 2016,
+            "winner": { "author": "N.K.Jemisin", "title": "The Fifth Season" },
+            "shortlisted": [
+                { "author": "Naomi Novik ", "title ": "Uprooted" },
+                { "author": "Ann Leckie", "title": "Ancillary Mercy" },
+                { "author": "Neal Stephenson ", "title ": "Seveneves" },
+                { "author": "Jim Butcher", "title": "The Cinder Spires: The Aeronaut 's Windlass" }
+            ]
+        },
+        {
+            "year": 2017,
+            "winner": { "author": "N.K.Jemisin", "title": "The Obelisk Gate" },
+            "shortlisted": [
+                { "author": "Charlie Jane Anders ", "title ": "All the Birds in the Sky" },
+                { "author": "Becky Chambers", "title": "A Closed and Common Orbit" },
+                { "author": "Cixin Liu ", "title ": "Death 's End" },
+                { "author": "Yoon Ha Lee", "title": "Ninefox Gambit" },
+                { "author": "Ada Palmer ", "title ": "Too Like the Lightning" }
+            ]
+        }
+    ]
+}
