@@ -1,5 +1,4 @@
-{
-    "best_novel": [{
+[{
             "year": 1953,
             "winner": { "author": "Alfred Bester", "title": "The Demolished Man" },
             "shortlisted": []
@@ -620,4 +619,3 @@
             ]
         }
     ]
-}
