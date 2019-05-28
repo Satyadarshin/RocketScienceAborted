@@ -1,4 +1,4 @@
-[{
+{ "bestNovel": [{
             "year": 1953,
             "winner": { "author": "Alfred Bester", "title": "The Demolished Man" },
             "shortlisted": []
@@ -618,4 +618,4 @@
                 { "author": "Ada Palmer ", "title ": "Too Like the Lightning" }
             ]
         }
-    ]
+    ]}

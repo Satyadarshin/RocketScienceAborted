@@ -1,32 +1,21 @@
 /* */
-function loadHugos(callback) {   
-    const xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
-    xobj.open('GET', './data/hugo_award_novels.json', true); // Replace 'my_data' with the path to your file
-    xobj.onreadystatechange = function () {
-        if (xobj.readyState == 4 && xobj.status == "200") {
-            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-            callback(xobj.responseText);
-        }
-    };
-    xobj.send(null);  
-}
-
-function init() {
-    loadHugos(function(response) {
-     // Parse JSON string into object
-       const hugos = JSON.parse(response);
-    });
-   }
+const xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var response = JSON.parse(xhttp.responseText);
+      // console.log( response );
+      each( response );
+    }
+};
+xhttp.open("GET", "data/hugo_award_novels.json", true);
+xhttp.send();
 
 const listContainer = document.querySelector('#outcome');
-let text = "Dummy string 2";
+let text = "test data 2";
 let listContent = document.createElement('li');
 listContent.textContent = text;
 listContainer.appendChild(listContent);
 console.log(listContainer);
-let test = init();
-console.log(test);
 // .filter()
 
 // .map()
@@ -34,6 +23,16 @@ console.log(test);
 // .find()
 
 // .forEach()
+
+// const each = ( hugos ) => {  console.log( hugos.bestNovel )  };
+//const each = ( hugos ) => console.log(typeof hugos);
+//const each = ( hugos ) => {   hugos.forEach( hugo => console.log( hugo ) ) };
+const each = ( hugos ) => { 
+  for ( i=0; i < hugos.bestNovel.length; i++ ) {
+    // console.log(hugos.bestNovel[i].year)
+  console.log(`Winner,${hugos.bestNovel[i].year}: ${hugos.bestNovel[i].winner.author}, "${hugos.bestNovel[i].winner.title}".`)
+  }
+};
 
 // .some()
 
