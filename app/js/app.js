@@ -2,7 +2,7 @@
 const xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      var response = JSON.parse(xhttp.responseText);
+      const response = JSON.parse(xhttp.responseText);
       // console.log( response );
       each( response );
     }
@@ -24,15 +24,15 @@ console.log(listContainer);
 
 // .forEach()
 
-// const each = ( hugos ) => {  console.log( hugos.bestNovel )  };
-//const each = ( hugos ) => console.log(typeof hugos);
+// const each = ( hugos ) => {  console.log( hugos[0].year )  };
+const each = ( hugos ) => console.log(typeof hugos);
 //const each = ( hugos ) => {   hugos.forEach( hugo => console.log( hugo ) ) };
-const each = ( hugos ) => { 
-  for ( i=0; i < hugos.bestNovel.length; i++ ) {
-    // console.log(hugos.bestNovel[i].year)
-  console.log(`Winner,${hugos.bestNovel[i].year}: ${hugos.bestNovel[i].winner.author}, "${hugos.bestNovel[i].winner.title}".`)
-  }
-};
+// const each = ( hugos ) => { 
+//   for ( i=0; i < hugos.bestNovel.length; i++ ) {
+//     // console.log(hugos.bestNovel[i].year)
+//   console.log(`Winner,${hugos.bestNovel[i].year}: ${hugos.bestNovel[i].winner.author}, "${hugos.bestNovel[i].winner.title}".`)
+//   }
+// };
 
 // .some()
 
