@@ -9,5 +9,5 @@ The content is based around winners of the major SF literary prizes (the Hugo Aw
 
 Note that the project's principle purpose is skill development: overall user satisfaction is a secondary (although not unimportant) outcome.
 
-Be aware that I've consciously used techniques that may not work, or work as expected, in older browsers, especially Internet Explorer. This isn't a production-oriented project, 
+This is not a production-oriented project. Be aware that I've consciously used techniques that may not work, or work as expected, in older browsers, especially Internet Explorer.
 
