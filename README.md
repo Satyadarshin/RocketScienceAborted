@@ -11,3 +11,5 @@ Note that the project's principle purpose is skill development: overall user sat
 
 This is not a production-oriented project. Be aware that I've consciously used techniques that may not work, or work as expected, in older browsers, especially Internet Explorer.
 
+**Normalize.css**
+[Normalize.css](http://necolas.github.io/normalize.css/)  makes browsers render all elements more consistently and in line with modern standards. It precisely targets only the styles that need normalizing.

@@ -20,7 +20,7 @@ const each = ( hugos ) => {
       let winnerAuthor = document.createElement('td');
       winnerAuthor.textContent = `${theString[text].winner.author}, `;
       let winnerTitle = document.createElement('td');
-      winnerTitle.textContent =  `"${theString[text].winner.title}".`;
+      winnerTitle.textContent =  `"${theString[text].winner.title}"`;
       winnerRow.appendChild(winnerYear);
       winnerRow.appendChild(winnerAuthor);
       winnerRow.appendChild(winnerTitle);
