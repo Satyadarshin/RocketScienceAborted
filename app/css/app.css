@@ -1,7 +1,21 @@
+@import url("https://fonts.googleapis.com/css?family=Bitter|Saira+Semi+Condensed&display=swap");
 #tools {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+body {
+  background-color: #fafafa;
+}
+
+h1, h2, h3 {
+  font-family: "Saira Semi Condensed", sans-serif;
+}
+
+p {
+  margin: 0;
+  font-family: "Bitter", serif;
 }
 
 #outcome {
@@ -9,7 +23,9 @@
   border-top: 1px dotted silver;
 }
 
-p {
-  margin: 0;
+#outcome td {
+  padding: .25rem 0;
+  border-top: 1px solid silver;
+  border-collapse: collapse;
 }
 /*# sourceMappingURL=app.css.map */

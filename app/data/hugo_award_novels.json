@@ -1,4 +1,4 @@
-[{
+{ "bestNovel": [{
             "year": 1953,
             "winner": { "author": "Alfred Bester", "title": "The Demolished Man" },
             "shortlisted": []
@@ -44,7 +44,7 @@
         },
         {
             "year": 1961,
-            "winner": { "author": "Walter M.Miller, Jr.*A Canticle for Leibowitz" },
+            "winner": { "author": "Walter M.Miller, Jr.", "title": "A Canticle for Leibowitz" },
             "shortlisted": [
                 { "author": "Poul Anderson", "title": "The High Crusade" },
                 { "author": "Algis Budrys", "title": "Rogue Moon" },
@@ -262,7 +262,7 @@
         },
         {
             "year": 1983,
-            "winner": { "author": "Isaac Asimov ", "title ": "Foundation 's Edge" },
+            "winner": { "author": "Isaac Asimov ", "title": "Foundation's Edge" },
             "shortlisted": [
                 { "author": "C.J.Cherryh", "title": "The Pride of Chanur" },
                 { "author": "Arthur C.Clarke", "title": "2010: Odyssey Two" },
@@ -618,4 +618,4 @@
                 { "author": "Ada Palmer ", "title ": "Too Like the Lightning" }
             ]
         }
-    ]
+    ]}
