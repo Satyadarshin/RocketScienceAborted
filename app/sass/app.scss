@@ -1,18 +1,20 @@
+/* These first three files cover a basic browser reset and instantiate shared variables and mixins. */
 @import "./vendor/normalize";
 @import "./modules/colours";
 @import "./modules/typography";
 
-body {
-    background-color: $white;
-}
-h1, h2, h3 {
-    font-family: $heading;
-}
-p {
-    margin: 0;
-    font-family: $body;
-}
+/* Basic global project styles */
+@import "./partials/base";
 
+/* Page sections */
+@import "./partials/header";
+// @import "./partials/article";
+// @import "./partials/sidebar";
+// @import "./partials/footer";
 
-//@import "./partials/header";
+/* */
 @import "./partials/tables";
+
+.test_class {
+color: red;
+}

@@ -1,3 +1,4 @@
+/* These first three files cover a basic browser reset and instantiate shared variables and mixins. */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -342,31 +343,42 @@ template {
   display: none;
 }
 
+/* Basic global project styles */
 body {
   background-color: #fafafa;
 }
 
 h1, h2, h3 {
   font-family: "Saira Semi Condensed", sans-serif;
+  font-size: 1.75rem;
+  color: #313330;
 }
 
 p {
-  margin: 0;
   font-family: "Bitter", serif;
+  font-size: 16px;
+  color: #313330;
 }
 
+/* Page sections */
+/* */
 #outcome {
   margin-top: 1rem;
-  border-top: 1px dotted silver;
+  border-left: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
 }
 
 #outcome td {
   padding: .25rem 0;
-  border-top: 1px solid silver;
+  border-top: 1px solid #e6e6e6;
   border-collapse: collapse;
 }
 
 #outcome td:nth-child(2) {
   text-align: right;
+}
+
+.test_class {
+  color: red;
 }
 /*# sourceMappingURL=app.css.map */
