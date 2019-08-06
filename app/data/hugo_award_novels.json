@@ -589,7 +589,7 @@
         },
         {
             "year": 2015,
-            "winner": { "author": "Cixin Liu", "title": "The Three - Body Problem" },
+            "winner": { "author": "Cixin Liu", "title": "The Three-Body Problem" },
             "shortlisted": [
                 { "author": "Katherine Addison ", "title ": "The Goblin Emperor" },
                 { "author": "Kevin J.Anderson", "title": "The Dark Between the Stars" },
@@ -613,7 +613,7 @@
             "shortlisted": [
                 { "author": "Charlie Jane Anders ", "title ": "All the Birds in the Sky" },
                 { "author": "Becky Chambers", "title": "A Closed and Common Orbit" },
-                { "author": "Cixin Liu ", "title ": "Death 's End" },
+                { "author": "Cixin Liu ", "title ": "Death's End" },
                 { "author": "Yoon Ha Lee", "title": "Ninefox Gambit" },
                 { "author": "Ada Palmer ", "title ": "Too Like the Lightning" }
             ]

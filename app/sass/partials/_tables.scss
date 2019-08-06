@@ -1,13 +1,30 @@
 #outcome {
     margin-top: 1rem;
-    border-left: 1px solid $neutral;
-    border-right: 1px solid $neutral;
+    border-left: 1px solid $dark;
+    border-right: 1px solid $dark;
     td  { 
-        &:nth-child(2){
-            text-align: right
-        }
-        padding: .25rem 0;
+        // &:nth-child(2){
+        //     text-align: right
+        // }
+        padding: .25rem 1rem 0 0;
         border-top: 1px solid $neutral;
         border-collapse: collapse
     }
 }
+.test_class {
+    animation: swoosh 3s
+}
+@keyframes swoosh {
+     0% {
+         opacity: 1;
+     }
+     50% {
+         opacity: .5;
+     }
+     90% {
+         opacity: 0;
+     }
+     100% {
+         display: none;
+     }
+ }

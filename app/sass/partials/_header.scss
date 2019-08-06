@@ -1,0 +1,22 @@
+header {
+    border: 1px solid aqua;
+    background-color: aquamarine;
+    height: 65vh;
+    margin: 0;
+    .hero {
+        h1 {
+            color: white;
+            font-size: 3rem;
+            margin-top: 0;
+        }
+        p {
+            margin-top: -2.5rem;
+            color: whitesmoke
+        }
+        width: 25rem;
+        height: 15rem;
+        margin: 1rem;
+        border: 6px solid white;
+        padding-bottom: 3rem;
+    }
+}

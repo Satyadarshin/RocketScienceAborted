@@ -4,6 +4,11 @@ body {
 h1, h2, h3 {
     @include headings();
 }
+article {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+}
 p {
     @include body();
 }
