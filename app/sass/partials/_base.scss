@@ -4,11 +4,20 @@ body {
 h1, h2, h3 {
     @include headings();
 }
+p {
+    @include body();
+}
 article {
     width: 80vw;
     margin-left: auto;
     margin-right: auto;
 }
-p {
-    @include body();
+footer {
+    height: 10vh;
+    padding: 3rem 0;
+    margin-top: 3rem;
+    background-color: lightgray;
+    p {
+        margin-left: 10rem;
+    }
 }
