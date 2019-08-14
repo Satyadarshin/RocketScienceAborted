@@ -1,26 +1,20 @@
 //TODO can I get this array to self-populate by reading the ./data directory?
-// const dataSource = [ "data/hugo_award_novels", "data/nebula_award_novels" ];
-const dataSource = "data/hugo_award_novels";
+const dataSource = [ "data/hugo_award_novels", "data/nebula_award_novels" ];
  
 const xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
     if ( this.readyState == 4 && this.status == 200 ) {
       const response = JSON.parse( xhttp.responseText );
-      //Original function processes just one data source
-      each( response );
-      //New function combines multiple data sources first
-      //combineDataSources( response )
+      //Combine multiple data sources
+      combineDataSources( response )
     }
   }
-    xhttp.open( "GET", dataSource + ".json", true );
-    xhttp.send();
 
 
-// for ( i = 0; i < dataSource.length; i++ ) {
-//   // console.log( `test: ${dataSource[i]}` );
-//   xhttp.open( "GET", dataSource[i] + ".json", true );
-//   xhttp.send();
-// }
+for ( i = 0; i < dataSource.length; i++ ) {
+  xhttp.open( "GET", dataSource[i] + ".json", true );
+  xhttp.send();
+}
 
 const combineDataSources = ( theAward ) => {
  console.log( theAward );
