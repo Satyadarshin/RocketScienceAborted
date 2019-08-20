@@ -10,15 +10,22 @@ xhttp.onreadystatechange = function() {
     }
   }
 
-
 for ( i = 0; i < dataSource.length; i++ ) {
   xhttp.open( "GET", dataSource[i] + ".json", true );
   xhttp.send();
 }
 
-const combineDataSources = ( theAward ) => {
- console.log( theAward );
-}
+const combineDataSources = ( theAward, combinedAward ) => {
+if ( typeof combinedAward == "undefined" )  {
+  combinedAward = {}
+} 
+for ( var key in theAward ) {
+      if ( theAward.hasOwnProperty(key) ) {
+         combinedAward[key] = theAward[key];
+      }
+    }
+    console.log(combinedAward)
+ }
 
 const rowBuilder = ( i, tableContainer ) => {
   let winnerRow = document.createElement( 'tr' );

@@ -439,7 +439,7 @@ header .hero p {
   width: 25%;
 }
 
-.test_class {
+.swoosh {
   -webkit-animation: swoosh 3s;
           animation: swoosh 3s;
 }
