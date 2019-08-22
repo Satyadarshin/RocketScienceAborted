@@ -1,3 +1,4 @@
+/* Some of the ideas about organising the styles came from http://bradfrost.com/blog/post/atomic-web-design/ */
 /* These first three files cover a basic browser reset and instantiate shared variables and mixins. */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -405,7 +406,7 @@ header .hero p {
   color: whitesmoke;
 }
 
-/* */
+/* Molecules */
 #outcome {
   width: 100%;
   margin-top: 1rem;
@@ -439,7 +440,7 @@ header .hero p {
   width: 25%;
 }
 
-.test_class {
+.swoosh {
   -webkit-animation: swoosh 3s;
           animation: swoosh 3s;
 }
@@ -472,5 +473,51 @@ header .hero p {
   100% {
     display: none;
   }
+}
+
+/* Atoms */
+.the_awards h3 {
+  margin: 0;
+  padding: .35rem;
+  background-color: #b4b4b4;
+  color: #fafafa;
+}
+
+.the_awards .award_selector {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border: 1px solid #b4b4b4;
+  padding: .5rem;
+}
+
+.the_awards .award_selector button {
+  margin-top: .5rem;
+  padding: .5rem;
+  border: 1px solid darkcyan;
+  border-radius: 3px;
+}
+
+.the_awards .award_selector button.nebula_best_novel {
+  background-color: aqua;
+}
+
+.the_awards .award_selector button.nebula_best_novel:hover {
+  background-color: aquamarine;
+}
+
+.the_awards .award_selector button.hugo_best_novel {
+  background-color: aqua;
+}
+
+.the_awards .award_selector button.hugo_best_novel:hover {
+  background-color: aquamarine;
 }
 /*# sourceMappingURL=app.css.map */

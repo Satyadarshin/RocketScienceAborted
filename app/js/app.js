@@ -1,3 +1,6 @@
+const theNebulas = document.querySelector(".nebula_best_novel").addEventListener('click', ()=>alert('yey!'));
+const theHugos = document.querySelector(".hugo_best_novel").addEventListener('click', ()=>alert('hey!'));
+
 //TODO can I get this array to self-populate by reading the ./data directory?
 // const dataSource = [ "data/hugo_award_novels", "data/nebula_award_novels" ];
 const dataSource = "data/hugo_award_novels";

@@ -1,3 +1,5 @@
+/* Some of the ideas about organising the styles came from http://bradfrost.com/blog/post/atomic-web-design/ */
+
 /* These first three files cover a basic browser reset and instantiate shared variables and mixins. */
 @import "./vendor/normalize";
 @import "./modules/colours";
@@ -12,5 +14,8 @@
 // @import "./partials/sidebar";
 // @import "./partials/footer";
 
-/* */
+/* Molecules */
 @import "./partials/tables";
+
+/* Atoms */
+@import "./partials/buttons"
