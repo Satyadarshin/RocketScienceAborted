@@ -3,10 +3,16 @@
     margin-top: 1rem;
     border: 1px solid $dark;
     border-collapse: collapse;    
+    caption {
+        border: 1px solid $dark;
+        border-bottom: none;
+        padding: .5rem;
+    }
     thead {
         border: 1px solid $dark;
         border-bottom: none; 
-        th {background-color: $neutral;
+        th {
+            background-color: $neutral;
             padding: .5rem;
             text-align: left;
             &:first-child {
@@ -23,9 +29,14 @@
         border-top: 1px solid $dark;
         border-collapse: collapse
     }
+    tfoot {
+        text-align: center;
+        background-color: $dark;
+        color: $white;
+    }
 }
 .swoosh {
-    animation: swoosh 3s
+    animation: swoosh 1s;
 }
 @keyframes swoosh {
      0% {

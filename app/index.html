@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +7,18 @@
     <title>Rocket Science</title>
     <link rel="stylesheet" href="dist/css/app.min.css">
 </head>
-
 <body>
     <header>
-        <div class="hero">
-            <h1>Rocket Science</h1>
-            <p>Winners of the major SF literary prizes</p>
-        </div>
+        <figure>
+            <img src="media/images/mars-surface.jpg" 
+            srcset=""
+            sizes=""
+            class="splash_image" alt="The surface of the planet Mars">
+            <figcaption>
+                <h1>Rocket Science</h1>
+                <p>Winners of the major SF literary prizes</p>
+            </figcaption>
+        </figure>
     </header>
     <article> 
         <section class="welcome">
@@ -33,19 +37,25 @@
         <section class="about-me">
             <img src="" alt="">
             <h2>About the project</h2>
-            <p>All of the output you see here was written in modern HTML, CSS, and vanilla (ES6) javaScript. It&rsquo;s an open-ended project, which increases the sophistication of the output simply as a learning outcome.</p>            
+            <p>All of the output you see here was written in modern HTML, CSS, and vanilla (ES6) javaScript. It&rsquo;s an open-ended project, which increases the sophistication of output simply as a learning outcome.</p>            
+            <p>The project was developed in Firefox and makes negligible concessions to broader browser support (I make no attempt to support Internet Explorer). Clearly this isn&rsquo;t acceptable in a production project, but to emphasise, this is a self-training sandbox, so if something doesn&rsquo;t work, or looks clumsy, that&rsquo;s within project scope.</p>
             <h3 class="about-subtitle">About the data</h3>
             <div class="about-text">
-                <p>The data was being sourced from Wikipedia and stored as a jSON file.</p> 
+                <p>Because this is a training project, I&rsquo;ve restricted myself to browser-native JavaScript. The award lists are stored as regular JSON files, not in a database.</p> 
                 <div class="the_awards">
-                    <h3>Choose your award</h3>
+                    <p>View an award list</p>
                     <div class="award_selector">
                         <button class="nebula_best_novel">Nebula Award for Best Novel</button>
                         <button class="hugo_best_novel">Hugo Award for Best Novel</button>
                     </div> 
                 </div>
                 <table id="outcome">
-                    
+                    <caption><span>Your selected award list will appear below.</span></caption>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">Data sourced from Wikipedia</td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
         </section>

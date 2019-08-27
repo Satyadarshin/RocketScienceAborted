@@ -1,33 +1,25 @@
-const theNebulas = document.querySelector(".nebula_best_novel").addEventListener('click', ()=>alert('yey!'));
-const theHugos = document.querySelector(".hugo_best_novel").addEventListener('click', ()=>alert('hey!'));
-
-//TODO can I get this array to self-populate by reading the ./data directory?
-// const dataSource = [ "data/hugo_award_novels", "data/nebula_award_novels" ];
-const dataSource = "data/hugo_award_novels";
- 
-const xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
+const chooseAward = ( selectedAward ) => {
+  const caption = document.querySelector( "#outcome caption span"); //
+  caption.setAttribute( "class", "swoosh" );
+    setTimeout( () => {
+      caption.textContent = selectedAward;
+    }, 800
+  );
+  let dataSource = "data/" + selectedAward;
+  // XMLHttpRequest doesn't seem to refactor as ES6, hence the combo syntax.
+  const xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
     if ( this.readyState == 4 && this.status == 200 ) {
       const response = JSON.parse( xhttp.responseText );
-      //Original function processes just one data source
       each( response );
-      //New function combines multiple data sources first
-      //combineDataSources( response )
     }
   }
-    xhttp.open( "GET", dataSource + ".json", true );
-    xhttp.send();
-
-
-// for ( i = 0; i < dataSource.length; i++ ) {
-//   // console.log( `test: ${dataSource[i]}` );
-//   xhttp.open( "GET", dataSource[i] + ".json", true );
-//   xhttp.send();
-// }
-
-const combineDataSources = ( theAward ) => {
- console.log( theAward );
+  xhttp.open( "GET", dataSource + ".json", true );
+  xhttp.send();
 }
+
+const theNebulas = document.querySelector( ".nebula_best_novel" ).addEventListener( 'click', () => { chooseAward( "nebula_award_novels" ) });
+const theHugos = document.querySelector( ".hugo_best_novel" ).addEventListener( 'click', () => { chooseAward( "hugo_award_novels" ) });
 
 const rowBuilder = ( i, tableContainer ) => {
   let winnerRow = document.createElement( 'tr' );
@@ -84,8 +76,11 @@ const delay = ( rowsToBuild, Winners, theContainer, nextHugo ) => {
 }
 
 const each = ( hugos ) => { 
+  //todo: hoist this variable out because it's searched for twice
   let theContainer = document.querySelector( "#outcome" );
   for ( const novels in hugos ) {
+    // console.log( novels)
+    console.log(hugos[novels]);
     const theWinners = hugos[novels];
     let rowsToBuild = theWinners.length;
     delay( rowsToBuild, theWinners, theContainer );
