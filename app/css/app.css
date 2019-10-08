@@ -486,6 +486,11 @@ header figure figcaption p {
   width: 25%;
 }
 
+#outcome td:nth-child(4) {
+  width: 30%;
+  color: red;
+}
+
 #outcome tfoot {
   text-align: center;
   background-color: #b4b4b4;

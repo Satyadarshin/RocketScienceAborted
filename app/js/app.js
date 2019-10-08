@@ -2,7 +2,17 @@ const chooseAward = ( selectedAward ) => {
   const caption = document.querySelector( "#outcome caption span"); //
   caption.setAttribute( "class", "swoosh" );
     setTimeout( () => {
-      caption.textContent = selectedAward;
+      //Pull out the award name from the JSON data property.
+      //Strip out the underscore separators.
+      //Capitalise the first letter of each word.
+      //Present as a table caption.
+      let awardCaption = selectedAward.replace( /_/g, " " );
+      capitaliseCaption = awardCaption.split( " " );
+      for ( let i = 0; i < capitaliseCaption.length; i++ ) {
+        capitaliseCaption[i] = capitaliseCaption[i].charAt(0).toUpperCase() + capitaliseCaption[i].slice(1);
+        awardCaption = capitaliseCaption.join( " " );
+      }
+      caption.textContent = awardCaption;
     }, 800
   );
   let dataSource = "data/" + selectedAward;
@@ -25,18 +35,19 @@ const rowBuilder = ( thisWinner, tableContainer, thisIndex ) => {
   const paused = false;
   let winnerRow = document.createElement( 'tr' );
   //this data- value added so that we can pull out this row separately by array index
-  winnerRow.setAttribute('data-index', thisIndex);
+  winnerRow.setAttribute( 'data-index', thisIndex );
   let winnerYear = document.createElement( 'td' );
-  winnerYear.textContent = `${thisWinner.year}`;
+  winnerYear.textContent = `${ thisWinner.year }`;
   let winnerAuthor = document.createElement( 'td' );
-  winnerAuthor.textContent = `${thisWinner.winner.author}`;
+  winnerAuthor.textContent = `${ thisWinner.winner.author }`;
   let winnerTitle = document.createElement( 'td' );
   
   let controls = document.createElement( 'td' );
   const previousWinner = document.createElement( 'button' );
   previousWinner.setAttribute( 'class', 'previous_row' );
-  //TODO set up a control so that the next value can't be below 0 
-  previousWinner.setAttribute( 'data-previous', thisIndex-1 );
+  //Sets up a control so that the previous button can't call a value < 0 (i.e. an award that doesn't exist) 
+  let pastIndex = ( thisIndex <= 0 ) ? thisIndex = 0 : thisIndex-1;
+  previousWinner.setAttribute( 'data-previous', pastIndex );
   previousWinner.textContent = 'Previous';
 
   const nextWinner = document.createElement( 'button' );
@@ -55,14 +66,12 @@ const rowBuilder = ( thisWinner, tableContainer, thisIndex ) => {
   controls.appendChild( pauseButton );
   controls.appendChild( nextWinner );
 
-  
-  
-  winnerTitle.textContent = `${thisWinner.winner.title}`;
+  winnerTitle.textContent = `${ thisWinner.winner.title }`;
   winnerRow.appendChild( winnerYear );
   winnerRow.appendChild( winnerAuthor );
   winnerRow.appendChild( winnerTitle );
-  tableContainer.appendChild( winnerRow );
   winnerRow.appendChild( controls);
+  tableContainer.appendChild( winnerRow );
   setTimeout( () => { 
     winnerRow.classList.add( "swoosh" );
     setTimeout( () => { 
@@ -78,9 +87,11 @@ const generateTableHead = ( theContainer, Winners ) => {
     if ( theColumn < 2 ) {
       let headerElement = document.createElement( "th" );
       if ( theColumn == 1 ) { 
-        headerElement.setAttribute( "colspan", "2" );
+        headerElement.setAttribute( "colspan", "3" );
       }
-      let headerText = document.createTextNode( columnTitle[theColumn] );
+      let awardTitleText = columnTitle[theColumn];
+      let tidyTitleText = awardTitleText.replace( /_/g, '&nbsp;' );
+      let headerText = document.createTextNode( tidyTitleText );
       headerElement.appendChild( headerText );
       tableHead.appendChild( headerElement );
     }
@@ -102,7 +113,7 @@ const delay = ( rowsToBuild, Winners, theContainer, nextHugo ) => {
       nextHugo++;
       //console.log(`the next index is ${nextHugo}`);
       delay( rowsToBuild, Winners, theContainer, nextHugo )
-    }, 1000);
+    }, 1000 );
   }
 }
 
@@ -113,5 +124,5 @@ const each = ( hugos ) => {
     const theWinners = hugos[novels];
     let rowsToBuild = theWinners.length;
     delay( rowsToBuild, theWinners, theContainer );
-   }
+  }
 }
