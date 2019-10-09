@@ -8,10 +8,15 @@ const chooseAward = ( selectedAward ) => {
       //Present as a table caption.
       let awardCaption = selectedAward.replace( /_/g, " " );
       capitaliseCaption = awardCaption.split( " " );
-      for ( let i = 0; i < capitaliseCaption.length; i++ ) {
-        capitaliseCaption[i] = capitaliseCaption[i].charAt(0).toUpperCase() + capitaliseCaption[i].slice(1);
+      // for ( let i = 0; i < capitaliseCaption.length; i++ ) {
+      //   capitaliseCaption[i] = capitaliseCaption[i].charAt(0).toUpperCase() + capitaliseCaption[i].slice(1);
+      //   awardCaption = capitaliseCaption.join( " " );
+      // }
+      capitaliseCaption.forEach((element) => {
+        element.charAt(0).toUpperCase() + element.slice(1);
+        console.log( element.charAt( 0 ).toUpperCase() );
         awardCaption = capitaliseCaption.join( " " );
-      }
+      });
       caption.textContent = awardCaption;
     }, 800
   );
