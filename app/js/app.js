@@ -6,18 +6,12 @@ const chooseAward = ( selectedAward ) => {
       //Strip out the underscore separators.
       //Capitalise the first letter of each word.
       //Present as a table caption.
-      let awardCaption = selectedAward.replace( /_/g, " " );
-      capitaliseCaption = awardCaption.split( " " );
-      // for ( let i = 0; i < capitaliseCaption.length; i++ ) {
-      //   capitaliseCaption[i] = capitaliseCaption[i].charAt(0).toUpperCase() + capitaliseCaption[i].slice(1);
-      //   awardCaption = capitaliseCaption.join( " " );
-      // }
-      capitaliseCaption.forEach((element) => {
-        element.charAt(0).toUpperCase() + element.slice(1);
-        console.log( element.charAt( 0 ).toUpperCase() );
-        awardCaption = capitaliseCaption.join( " " );
+      const awardCaption = selectedAward.replace( /_/g, " " );
+      const capitaliseCaption = [];
+      awardCaption.split( " " ).forEach((element) => {
+        capitaliseCaption.push( element.charAt(0).toUpperCase() +  element.slice(1) );
       });
-      caption.textContent = awardCaption;
+      caption.textContent = capitaliseCaption.join( " " );
     }, 800
   );
   let dataSource = "data/" + selectedAward;
