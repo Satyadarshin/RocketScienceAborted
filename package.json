@@ -1,0 +1,22 @@
+{
+  "name": "rocketscience",
+  "version": "1.0.0",
+  "description": "**Rocket Science**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Satyadarshin/RocketScience.git"
+  },
+  "author": "Satyadarshin Perry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Satyadarshin/RocketScience/issues"
+  },
+  "homepage": "https://github.com/Satyadarshin/RocketScience#readme",
+  "devDependencies": {
+    "typescript": "^3.6.4"
+  }
+}

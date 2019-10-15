@@ -368,6 +368,29 @@ article {
   margin-right: auto;
 }
 
+article .welcome {
+  margin-top: .2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr 1fr;
+      grid-template-columns: 1fr 3fr 1fr;
+  grid-column-gap: 5px;
+}
+
+article .welcome .welcome-left {
+  padding: 0 .5rem;
+  background-color: silver;
+}
+
+article .welcome .welcome-middle {
+  padding: 0 .5rem;
+}
+
+article .welcome .welcome-right {
+  padding: 0 .5rem;
+  background-color: silver;
+}
+
 footer {
   height: 10vh;
   padding: 3rem 0;
