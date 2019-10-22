@@ -1,11 +1,9 @@
 "use strict";
 const chooseAward = (selectedAward) => {
-    if (!document.querySelector("#outcome caption span")) {
-        const caption = document.querySelector("#outcome caption span"); //TODO check that this is not null  or throw an error
-    }
-    else {
-        console.log(`Can't find DOM element .`);
-        alert('foo');
+    const caption = document.querySelector("#outcome caption span"); //TODO check that this is not null  or throw an error
+    if (!caption) {
+        console.log(`Can't find the DOM element to attach the output table. Check the ID value.`);
+        alert('There as an error outputting the result table. Please contact Technical support');
     }
     caption.setAttribute("class", "swoosh");
     setTimeout(() => {

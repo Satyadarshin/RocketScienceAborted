@@ -1,18 +1,18 @@
 const chooseAward = ( selectedAward: string ) => {
-  if (!document.querySelector( "#outcome caption span")) {
-    const caption = document.querySelector( "#outcome caption span"); //TODO check that this is not null  or throw an error
+  const caption = ( document.querySelector( "#outcome caption span" ) as Element); //TODO check that this is not null  or throw an error
+  if (!caption) {
+    console.log(`Can't find the DOM element to attach the output table. Check the ID value.`)
+    alert('There as an error outputting the result table. Please contact Technical support');
   }
-  else {
-    console.log(`Can't find DOM element .`)
-    alert('foo');
-  }
+
   caption.setAttribute( "class", "swoosh" );
     setTimeout( () => {
       //Pull out the award name from the JSON data property.
       //Strip out the underscore separators.
       //Capitalise the first letter of each word.
       //Present as a table caption.
-      const awardCaption = selectedAward.replace( /_/g, " " );
+      const awardCaption: string = selectedAward.replace( /_/g, " " );
+
       const capitaliseCaption: Array<string> = [];
       awardCaption.split( " " ).forEach((element) => {
         capitaliseCaption.push( element.charAt(0).toUpperCase() +  element.slice(1) );
@@ -20,7 +20,7 @@ const chooseAward = ( selectedAward: string ) => {
       caption.textContent = capitaliseCaption.join( " " );
     }, 800
   );
-  let dataSource = "data/" + selectedAward;
+  let dataSource: string = "data/" + selectedAward;
   // XMLHttpRequest doesn't seem to refactor as ES6, hence the combo syntax.
   const xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -34,14 +34,14 @@ const chooseAward = ( selectedAward: string ) => {
 }
 //TODO same as above: this is a quick is a quick way to get the variable to validate
 const theNebulas = (document.querySelector( ".nebula_best_novel" ) as Element).addEventListener( 'click', () => { chooseAward( "nebula_award_novels" ) });
-const theHugos = document.querySelector( ".hugo_best_novel" ).addEventListener( 'click', () => { chooseAward( "hugo_award_novels" ) });
+const theHugos = (document.querySelector( ".hugo_best_novel" ) as Element).addEventListener( 'click', () => { chooseAward( "hugo_award_novels" ) });
 // const capitaliseMe = ( startsLowerCase ) => {
 //   startsLowerCase.split( " " ).forEach((element) => {
 //     capitaliseThis.push( element.charAt(0).toUpperCase() +  element.slice(1) );
 //     capitalise.join( " " );
 //   });
 // }
-const rowBuilder = ( thisWinner, tableContainer, thisIndex ) => {
+const rowBuilder = ( thisWinner: string, tableContainer: string, thisIndex: number ) => {
   const paused = false;
   let winnerRow = document.createElement( 'tr' );
   //this data- value added so that we can pull out this row separately by array index
