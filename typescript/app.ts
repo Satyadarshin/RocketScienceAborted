@@ -1,5 +1,11 @@
-const chooseAward = ( selectedAward ) => {
-  const caption = document.querySelector( "#outcome caption span"); //
+const chooseAward = ( selectedAward: string ) => {
+  if (!document.querySelector( "#outcome caption span")) {
+    const caption = document.querySelector( "#outcome caption span"); //TODO check that this is not null  or throw an error
+  }
+  else {
+    console.log(`Can't find DOM element .`)
+    alert('foo');
+  }
   caption.setAttribute( "class", "swoosh" );
     setTimeout( () => {
       //Pull out the award name from the JSON data property.
@@ -7,7 +13,7 @@ const chooseAward = ( selectedAward ) => {
       //Capitalise the first letter of each word.
       //Present as a table caption.
       const awardCaption = selectedAward.replace( /_/g, " " );
-      const capitaliseCaption = [];
+      const capitaliseCaption: Array<string> = [];
       awardCaption.split( " " ).forEach((element) => {
         capitaliseCaption.push( element.charAt(0).toUpperCase() +  element.slice(1) );
       });
@@ -26,8 +32,8 @@ const chooseAward = ( selectedAward ) => {
   xhttp.open( "GET", dataSource + ".json", true );
   xhttp.send();
 }
-
-const theNebulas = document.querySelector( ".nebula_best_novel" ).addEventListener( 'click', () => { chooseAward( "nebula_award_novels" ) });
+//TODO same as above: this is a quick is a quick way to get the variable to validate
+const theNebulas = (document.querySelector( ".nebula_best_novel" ) as Element).addEventListener( 'click', () => { chooseAward( "nebula_award_novels" ) });
 const theHugos = document.querySelector( ".hugo_best_novel" ).addEventListener( 'click', () => { chooseAward( "hugo_award_novels" ) });
 // const capitaliseMe = ( startsLowerCase ) => {
 //   startsLowerCase.split( " " ).forEach((element) => {
@@ -51,7 +57,7 @@ const rowBuilder = ( thisWinner, tableContainer, thisIndex ) => {
   previousWinner.setAttribute( 'class', 'previous_row' );
   //Sets up a control so that the previous button can't call a value < 0 (i.e. an award that doesn't exist) 
   let pastIndex = ( thisIndex <= 0 ) ? thisIndex = 0 : thisIndex-1;
-  previousWinner.setAttribute( 'data-previous', pastIndex );
+  previousWinner.setAttribute( 'data-previous', pastIndex.toString() );
   previousWinner.textContent = 'Previous';
 
   const nextWinner = document.createElement( 'button' );
@@ -82,51 +88,50 @@ const rowBuilder = ( thisWinner, tableContainer, thisIndex ) => {
       tableContainer.removeChild( winnerRow )
     }, 1000) }, 1000 )
 }
-
 //Dynamically build a table header.
-const generateTableHead = ( theContainer, Winners ) => {
+const generateTableHead = (theContainer, Winners) => {
   let tableHead = theContainer.createTHead();
-  let columnTitle = Object.keys( Winners[0] );
-  for ( theColumn in columnTitle ) {
-    if ( theColumn < 2 ) {
-      let headerElement = document.createElement( "th" );
-      if ( theColumn == 1 ) { 
-        headerElement.setAttribute( "colspan", "3" );
+  let columnTitle = Object.keys(Winners[0]);
+  for (const theColumn in columnTitle) {
+    const columnIndex = parseInt(theColumn, 10); //Always parse as a decimal.
+      if (columnIndex < 2) { 
+          let headerElement = document.createElement("th");
+          if (columnIndex == 1) {
+              headerElement.setAttribute("colspan", "3");
+          }
+          let awardTitleText = columnTitle[theColumn];
+          let tidyTitleText = awardTitleText.replace(/_/g, '&nbsp;');
+          let headerText = document.createTextNode(tidyTitleText);
+          headerElement.appendChild(headerText);
+          tableHead.appendChild(headerElement);
       }
-      let awardTitleText = columnTitle[theColumn];
-      let tidyTitleText = awardTitleText.replace( /_/g, '&nbsp;' );
-      let headerText = document.createTextNode( tidyTitleText );
-      headerElement.appendChild( headerText );
-      tableHead.appendChild( headerElement );
-    }
   }
-}
-
+};
 //This function should manage the delay in building each row. 
-const delay = ( rowsToBuild, Winners, theContainer, nextHugo ) => {
-  if ( typeof nextHugo === "undefined" ) {
-    var nextHugo = 0;
-    generateTableHead( theContainer, Winners )
+const delay = (rowsToBuild, Winners, theContainer, nextHugo?: number) => {
+  if (typeof nextHugo === "undefined") {
+      nextHugo = 0;
+      generateTableHead(theContainer, Winners);
   }
-  if ( rowsToBuild === 0 ) {
-    console.log( "End of row building." );
-  } else {
-    setTimeout( ()=> {
-      rowBuilder( Winners[nextHugo], theContainer, nextHugo );
-      rowsToBuild--;
-      nextHugo++;
-      //console.log(`the next index is ${nextHugo}`);
-      delay( rowsToBuild, Winners, theContainer, nextHugo )
-    }, 1000 );
+  if (rowsToBuild === 0) {
+      console.log("End of row building.");
   }
-}
-
-const each = ( hugos ) => { 
+  else {
+      setTimeout(() => {
+          rowBuilder(Winners[nextHugo], theContainer, nextHugo);
+          rowsToBuild--;
+          nextHugo++;
+          //console.log(`the next index is ${nextHugo}`);
+          delay(rowsToBuild, Winners, theContainer, nextHugo);
+      }, 1000);
+  }
+};
+const each = (hugos) => {
   //todo: hoist this variable out because it's searched for twice
-  let theContainer = document.querySelector( "#outcome" );
-  for ( const novels in hugos ) {
-    const theWinners = hugos[novels];
-    let rowsToBuild = theWinners.length;
-    delay( rowsToBuild, theWinners, theContainer );
+  let theContainer = document.querySelector("#outcome");
+  for (const novels in hugos) {
+      const theWinners = hugos[novels];
+      let rowsToBuild = theWinners.length;
+      delay(rowsToBuild, theWinners, theContainer);
   }
-}
+};
