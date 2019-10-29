@@ -40,10 +40,12 @@ const theHugos = document.querySelector(".hugo_best_novel").addEventListener('cl
 //   });
 // }
 const rowBuilder = (thisWinner, tableContainer, thisIndex) => {
+    console.log(typeof tableContainer);
     const paused = false;
     let winnerRow = document.createElement('tr');
     //this data- value added so that we can pull out this row separately by array index
-    winnerRow.setAttribute('data-index', thisIndex);
+    //TODO thisIndex needs to become a string
+    winnerRow.setAttribute('data-index', thisIndex.toString());
     let winnerYear = document.createElement('td');
     winnerYear.textContent = `${thisWinner.year}`;
     let winnerAuthor = document.createElement('td');
@@ -85,6 +87,8 @@ const rowBuilder = (thisWinner, tableContainer, thisIndex) => {
 };
 //Dynamically build a table header.
 const generateTableHead = (theContainer, Winners) => {
+    //It's necessary to be very specific about the type of Element in order to make certain property's available.
+    //.createTHead is only available on HTMLTableElemnt types, not on the more general HTMLElement and Element. 
     let tableHead = theContainer.createTHead();
     let columnTitle = Object.keys(Winners[0]);
     for (const theColumn in columnTitle) {
@@ -113,6 +117,7 @@ const delay = (rowsToBuild, Winners, theContainer, nextHugo) => {
     }
     else {
         setTimeout(() => {
+            console.log(typeof theContainer);
             rowBuilder(Winners[nextHugo], theContainer, nextHugo);
             rowsToBuild--;
             nextHugo++;
@@ -124,9 +129,10 @@ const delay = (rowsToBuild, Winners, theContainer, nextHugo) => {
 const each = (hugos) => {
     //todo: hoist this variable out because it's searched for twice
     let theContainer = document.querySelector("#outcome");
-    for (const novels in hugos) {
-        const theWinners = hugos[novels];
-        let rowsToBuild = theWinners.length;
+    Object.keys(hugos).forEach(novel => {
+        //console.log(typeof novels);
+        const theWinners = hugos[novel];
+        let rowsToBuild = Object.keys(theWinners).length;
         delay(rowsToBuild, theWinners, theContainer);
-    }
+    });
 };

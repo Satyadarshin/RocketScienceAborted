@@ -33,40 +33,43 @@ const chooseAward = ( selectedAward: string ) => {
   xhttp.send();
 }
 //TODO same as above: this is a quick is a quick way to get the variable to validate
-const theNebulas = (document.querySelector( ".nebula_best_novel" ) as Element).addEventListener( 'click', () => { chooseAward( "nebula_award_novels" ) });
-const theHugos = (document.querySelector( ".hugo_best_novel" ) as Element).addEventListener( 'click', () => { chooseAward( "hugo_award_novels" ) });
+const theNebulas = ( document.querySelector( ".nebula_best_novel" ) as Element ).addEventListener( 'click', () => { chooseAward( "nebula_award_novels" ) });
+const theHugos = ( document.querySelector( ".hugo_best_novel" ) as Element ).addEventListener( 'click', () => { chooseAward( "hugo_award_novels" ) });
 // const capitaliseMe = ( startsLowerCase ) => {
 //   startsLowerCase.split( " " ).forEach((element) => {
 //     capitaliseThis.push( element.charAt(0).toUpperCase() +  element.slice(1) );
 //     capitalise.join( " " );
 //   });
 // }
-const rowBuilder = ( thisWinner: string, tableContainer: string, thisIndex: number ) => {
-  const paused = false;
-  let winnerRow = document.createElement( 'tr' );
+const rowBuilder = ( thisWinner: {year: number, winner: {author: string, title: string}}, tableContainer: Element, thisIndex?: number ) => {
+  console.log( typeof tableContainer );
+  const paused: Boolean = false;
+  let winnerRow: HTMLTableRowElement = document.createElement( 'tr' );
   //this data- value added so that we can pull out this row separately by array index
-  winnerRow.setAttribute( 'data-index', thisIndex );
-  let winnerYear = document.createElement( 'td' );
+  //TODO thisIndex needs to become a string
+
+  winnerRow.setAttribute( 'data-index', thisIndex.toString() );
+  let winnerYear: HTMLTableCellElement = document.createElement( 'td' );
   winnerYear.textContent = `${ thisWinner.year }`;
-  let winnerAuthor = document.createElement( 'td' );
+  let winnerAuthor: HTMLTableCellElement = document.createElement( 'td' );
   winnerAuthor.textContent = `${ thisWinner.winner.author }`;
-  let winnerTitle = document.createElement( 'td' );
+  let winnerTitle: HTMLTableCellElement = document.createElement( 'td' );
   
-  let controls = document.createElement( 'td' );
-  const previousWinner = document.createElement( 'button' );
+  let controls: HTMLTableCellElement = document.createElement( 'td' );
+  const previousWinner = (document.createElement( 'button' ) as HTMLElement);
   previousWinner.setAttribute( 'class', 'previous_row' );
   //Sets up a control so that the previous button can't call a value < 0 (i.e. an award that doesn't exist) 
-  let pastIndex = ( thisIndex <= 0 ) ? thisIndex = 0 : thisIndex-1;
+  let pastIndex: number = ( thisIndex <= 0 ) ? thisIndex = 0 : thisIndex-1;
   previousWinner.setAttribute( 'data-previous', pastIndex.toString() );
   previousWinner.textContent = 'Previous';
 
-  const nextWinner = document.createElement( 'button' );
+  const nextWinner = (document.createElement( 'button' ) as HTMLElement);
   nextWinner.setAttribute( 'class', 'next_row' );
   //TODO set up a control so the next value can't be greater than the total number of winners
   nextWinner.setAttribute( 'data-next', thisIndex+1 );
   nextWinner.textContent = 'next';
 
-  let pauseButton = document.createElement( 'button' );
+  let pauseButton = (document.createElement( 'button' ) as HTMLElement );
   pauseButton.setAttribute('class', 'pause_row');
   if ( paused ) {
     pauseButton.setAttribute('class', 'paused');
@@ -89,9 +92,11 @@ const rowBuilder = ( thisWinner: string, tableContainer: string, thisIndex: numb
     }, 1000) }, 1000 )
 }
 //Dynamically build a table header.
-const generateTableHead = (theContainer, Winners) => {
+const generateTableHead = ( theContainer: HTMLTableElement, Winners: Object ) => { 
+  //It's necessary to be very specific about the type of Element in order to make certain property's available.
+  //.createTHead is only available on HTMLTableElemnt types, not on the more general HTMLElement and Element. 
   let tableHead = theContainer.createTHead();
-  let columnTitle = Object.keys(Winners[0]);
+  let columnTitle = Object.keys( Winners[0] );
   for (const theColumn in columnTitle) {
     const columnIndex = parseInt(theColumn, 10); //Always parse as a decimal.
       if (columnIndex < 2) { 
@@ -108,7 +113,7 @@ const generateTableHead = (theContainer, Winners) => {
   }
 };
 //This function should manage the delay in building each row. 
-const delay = (rowsToBuild, Winners, theContainer, nextHugo?: number) => {
+const delay = (rowsToBuild: number, Winners: Object, theContainer: HTMLTableElement, nextHugo?: number) => {
   if (typeof nextHugo === "undefined") {
       nextHugo = 0;
       generateTableHead(theContainer, Winners);
@@ -118,6 +123,7 @@ const delay = (rowsToBuild, Winners, theContainer, nextHugo?: number) => {
   }
   else {
       setTimeout(() => {
+        console.log (typeof theContainer );
           rowBuilder(Winners[nextHugo], theContainer, nextHugo);
           rowsToBuild--;
           nextHugo++;
@@ -126,12 +132,13 @@ const delay = (rowsToBuild, Winners, theContainer, nextHugo?: number) => {
       }, 1000);
   }
 };
-const each = (hugos) => {
+const each = ( hugos: Object ) => {
   //todo: hoist this variable out because it's searched for twice
-  let theContainer = document.querySelector("#outcome");
-  for (const novels in hugos) {
-      const theWinners = hugos[novels];
-      let rowsToBuild = theWinners.length;
-      delay(rowsToBuild, theWinners, theContainer);
-  }
+  let theContainer = ( document.querySelector( "#outcome" ) as HTMLTableElement );
+  Object.keys(hugos).forEach( novel => {
+    //console.log(typeof novels);
+      const theWinners: Object = hugos[novel];
+      let rowsToBuild: number = Object.keys( theWinners ).length;
+      delay( rowsToBuild, theWinners, theContainer );
+  })
 };
