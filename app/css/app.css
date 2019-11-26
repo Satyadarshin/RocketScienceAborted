@@ -378,8 +378,13 @@ article .welcome {
 }
 
 article .welcome .welcome-left {
-  padding: 0 .5rem;
+  padding: 0;
   background-color: silver;
+}
+
+article .welcome .welcome-left blockquote {
+  margin: 0 .5rem;
+  padding: 0;
 }
 
 article .welcome .welcome-middle {

@@ -45,7 +45,8 @@ const rowBuilder = (thisWinner, tableContainer, thisIndex) => {
     let winnerRow = document.createElement('tr');
     //this data- value added so that we can pull out this row separately by array index
     //TODO thisIndex needs to become a string
-    winnerRow.setAttribute('data-index', thisIndex.toString());
+    const myIndex = String(thisIndex);
+    winnerRow.setAttribute('data-index', myIndex);
     let winnerYear = document.createElement('td');
     winnerYear.textContent = `${thisWinner.year}`;
     let winnerAuthor = document.createElement('td');
