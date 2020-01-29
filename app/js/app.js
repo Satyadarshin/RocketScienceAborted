@@ -40,11 +40,11 @@ const theHugos = document.querySelector(".hugo_best_novel").addEventListener('cl
 //   });
 // }
 const rowBuilder = (thisWinner, tableContainer, thisIndex) => {
-    console.log(typeof tableContainer);
+    //TODO thisIndex was set to be optionally undefined, throwing errors down the line.
+    //Why did I think it might have been an error?
     const paused = false;
     let winnerRow = document.createElement('tr');
     //this data- value added so that we can pull out this row separately by array index
-    //TODO thisIndex needs to become a string
     const myIndex = String(thisIndex);
     winnerRow.setAttribute('data-index', myIndex);
     let winnerYear = document.createElement('td');
@@ -56,13 +56,35 @@ const rowBuilder = (thisWinner, tableContainer, thisIndex) => {
     const previousWinner = document.createElement('button');
     previousWinner.setAttribute('class', 'previous_row');
     //Sets up a control so that the previous button can't call a value < 0 (i.e. an award that doesn't exist) 
-    let pastIndex = (thisIndex <= 0) ? thisIndex = 0 : thisIndex - 1;
-    previousWinner.setAttribute('data-previous', pastIndex.toString());
+    // let pastIndex: number =  thisIndex <= 0  ? 0 : thisIndex - 1;
+    let lowerIndex = 0;
+    if (thisIndex <= 0) {
+        lowerIndex = 0;
+    }
+    else if (thisIndex >= 0) {
+        lowerIndex = thisIndex - 1;
+    }
+    else if (thisIndex === undefined) {
+        return alert("number is undefined");
+    }
+    let pastIndex = String(lowerIndex);
+    previousWinner.setAttribute('data-previous', pastIndex);
     previousWinner.textContent = 'Previous';
+    let upperIndex = 0;
+    if (thisIndex <= 0) {
+        upperIndex = 0;
+    }
+    else if (thisIndex >= 0) {
+        upperIndex = thisIndex + 1;
+    }
+    else if (thisIndex === undefined) {
+        return alert("number is undefined");
+    }
+    let futureIndex = String(upperIndex);
     const nextWinner = document.createElement('button');
     nextWinner.setAttribute('class', 'next_row');
     //TODO set up a control so the next value can't be greater than the total number of winners
-    nextWinner.setAttribute('data-next', thisIndex + 1);
+    nextWinner.setAttribute('data-next', futureIndex);
     nextWinner.textContent = 'next';
     let pauseButton = document.createElement('button');
     pauseButton.setAttribute('class', 'pause_row');
