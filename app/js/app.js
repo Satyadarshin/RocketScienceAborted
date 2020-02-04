@@ -5,6 +5,10 @@ Break down into seperate files
 es6 template syntax
 when we fist load the page request the data sources ans store in memory (a variable).
 */
+/*
+ * Questions for Will:
+ * Line length limit of 100 characters?
+*/
 const chooseAward = (selectedAward) => {
     const caption = document.querySelector('#outcome caption span'); //  TODO check that this is not null  or throw an error  }
     caption.setAttribute('class', 'swoosh');
@@ -43,23 +47,9 @@ const theHugos = document.querySelector('.hugo_best_novel').addEventListener('cl
 //    });
 //  }
 const rowBuilder = (thisWinner, tableContainer, thisIndex) => {
-    // TODO thisIndex was set to be optionally undefined, throwing errors down the line.
-    // Why did I think it might have been an error?
-    const paused = false;
-    const winnerRow = document.createElement('tr');
-    // this data- value added so that we can pull out this row separately by array index
+    // The data- values are added so that we can pull out a row separately by array index.
     const myIndex = String(thisIndex);
-    winnerRow.setAttribute('data-index', myIndex);
-    // const winnerYear: HTMLTableCellElement = document.createElement('td');
-    // winnerYear.textContent = `${thisWinner.year}`;
-    const winnerYear = `<td>${thisWinner.year}</td>`;
-    const winnerAuthor = document.createElement('td');
-    winnerAuthor.textContent = `${thisWinner.winner.author}`;
-    const winnerTitle = document.createElement('td');
-    const controls = document.createElement('td');
-    const previousWinner = document.createElement('button');
-    previousWinner.setAttribute('class', 'previous_row');
-    // Sets up a control so that the previous button can't call a value < 0 (i.e. an award that doesn't exist)
+    // Sets up a control so that the Previous button can't call a value < 0 (i.e. an award that doesn't exist).
     // let pastIndex: number =  thisIndex <= 0  ? 0 : thisIndex - 1;
     let lowerIndex = 0;
     if (thisIndex <= 0) {
@@ -69,11 +59,10 @@ const rowBuilder = (thisWinner, tableContainer, thisIndex) => {
         lowerIndex = thisIndex - 1;
     }
     else if (thisIndex === undefined) {
-        return alert('number is undefined');
+        console.log('number is undefined');
     }
     const pastIndex = String(lowerIndex);
-    previousWinner.setAttribute('data-previous', pastIndex);
-    previousWinner.textContent = 'Previous';
+    const previousWinner = `<button class="previous_row" data-previous="${pastIndex}">Previous</button>`;
     let upperIndex = 0;
     if (thisIndex <= 0) {
         upperIndex = 0;
@@ -82,33 +71,25 @@ const rowBuilder = (thisWinner, tableContainer, thisIndex) => {
         upperIndex = thisIndex + 1;
     }
     else if (thisIndex === undefined) {
-        return alert('number is undefined');
+        console.log('number is undefined');
     }
     const futureIndex = String(upperIndex);
-    const nextWinner = document.createElement('button');
-    nextWinner.setAttribute('class', 'next_row');
-    // TODO set up a control so the next value can't be greater than the total number of winners
-    nextWinner.setAttribute('data-next', futureIndex);
-    nextWinner.textContent = 'next';
-    const pauseButton = document.createElement('button');
-    pauseButton.setAttribute('class', 'pause_row');
-    if (paused) {
-        pauseButton.setAttribute('class', 'paused');
-    }
-    pauseButton.textContent = 'Pause';
-    controls.appendChild(previousWinner);
-    controls.appendChild(pauseButton);
-    controls.appendChild(nextWinner);
-    winnerTitle.textContent = `${thisWinner.winner.title}`;
-    winnerRow.appendChild(winnerYear);
-    winnerRow.appendChild(winnerAuthor);
-    winnerRow.appendChild(winnerTitle);
-    winnerRow.appendChild(controls);
-    tableContainer.appendChild(winnerRow);
+    const nextWinner = `<button class="next_row" data-next="${futureIndex}">Next</button>`;
+    // TODO set up a control so the next value can't be greater than the total number of winner.
+    const pauseButton = '<button class="pause_row">Pause</button>';
+    const winnerRow = `<tr data-index="${myIndex}">\n 
+  <td>${thisWinner.year}</td>\n
+  <td>${thisWinner.winner.author}</td>\n
+  <td>${thisWinner.winner.title}</td>\n
+  <td>${previousWinner} ${pauseButton} ${nextWinner}</td> \n
+  </tr>`;
+    tableContainer.innerHTML = winnerRow;
     setTimeout(() => {
-        winnerRow.classList.add('swoosh');
+        tableContainer.querySelector('tr').classList.add('swoosh');
         setTimeout(() => {
-            tableContainer.removeChild(winnerRow);
+            const dropRow = tableContainer.querySelector('tr'); // .classList.add('swoosh');
+            dropRow.parentNode.removeChild(dropRow);
+            // tableContainer.removeChild(winnerRow);
         }, 1000);
     }, 1000);
 };
