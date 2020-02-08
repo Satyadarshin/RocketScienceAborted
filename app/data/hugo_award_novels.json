@@ -617,5 +617,16 @@
                 { "author": "Yoon Ha Lee", "title": "Ninefox Gambit" },
                 { "author": "Ada Palmer ", "title ": "Too Like the Lightning" }
             ]
+        },
+        {
+            "year": 2018,
+            "winner": { "author": "N.K.Jemisin", "title": "The Stone Sky" },
+            "shortlisted": [
+                { "author": "John Scalzi", "title ": "The Collapsing Empire" },
+                { "author": "Ann Leckie", "title ": "Provenance" },
+                { "author": "Mur Lafferty", "title ": "Six Wakes" },
+                { "author": "Yoon Ha Lee", "title ": "Raven Stratagem" },
+                { "author": "Kim Stanley Robinson", "title ": "New York 2140" }
+            ]
         }
     ]}

@@ -84,19 +84,18 @@ const rowBuilder = (
   const nextWinner: string = `<button class="next_row" data-next="${futureIndex}">Next</button>`;
   // TODO set up a control so the next value can't be greater than the total number of winner.
   const pauseButton: string = '<button class="pause_row">Pause</button>';
-  const winnerRow: string = `<tr data-index="${myIndex}">\n 
-  <td>${thisWinner.year}</td>\n
+  const winnerRow: HTMLElement = document.createElement('tr');
+  winnerRow.setAttribute('data-index', `${myIndex}`);
+  const winnerCells: string = `<td>${thisWinner.year}</td>\n
   <td>${thisWinner.winner.author}</td>\n
   <td>${thisWinner.winner.title}</td>\n
-  <td>${previousWinner} ${pauseButton} ${nextWinner}</td> \n
-  </tr>`;
-  tableContainer.innerHTML = winnerRow;
+  <td class="actions">${previousWinner} ${pauseButton} ${nextWinner}</td>`;
+  winnerRow.innerHTML = winnerCells;
+  tableContainer.appendChild(winnerRow);
   setTimeout(() => {
-    tableContainer.querySelector('tr').classList.add('swoosh');
+    tableContainer.classList.add('swoosh');
     setTimeout(() => {
-      const dropRow = tableContainer.querySelector('tr'); // .classList.add('swoosh');
-dropRow.parentNode.removeChild(dropRow);
-      // tableContainer.removeChild(winnerRow);
+      tableContainer.removeChild(winnerRow);
     }, 1000);
   }, 1000);
 };
