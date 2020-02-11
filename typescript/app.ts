@@ -97,17 +97,13 @@ const rowBuilder = (
   setTimeout(() => {
     winnerRow.classList.add('swoosh');
     setTimeout(() => {
-      tableContainer.removeChild(winnerRow);
-    }, 1000);
-  }, 1000);
-};
+      tableContainer.rem
 
 // Dynamically build a table header.
 const generateTableHead = (theContainer: HTMLTableElement, Winners: Object) => {
-  const tableHead = '';
   // It's necessary to be very specific about the type of Element in order to make certain property's available.
   // .createTHead is only available on HTMLTableElemnt types, not on the more general HTMLElement and Element.
-  tableHead = theContainer.createTHead();
+  const tableHead = theContainer.createTHead();
   const columnTitle = Object.keys(Winners[0]);
   for (const theColumn in columnTitle) {
     const columnIndex = parseInt(theColumn, 10); // Always parse as a decimal.
