@@ -9,6 +9,7 @@ when we fist load the page request the data sources ans store in memory (a varia
  * Questions for Will:
  * Line length limit of 100 characters?
 */
+// import { generateTableHead } from './modules/tableHeadGenerator';
 const chooseAward = (selectedAward) => {
     const caption = document.querySelector('#outcome caption span'); //  TODO check that this is not null  or throw an error  }
     caption.setAttribute('class', 'swoosh');
@@ -29,7 +30,7 @@ const chooseAward = (selectedAward) => {
     //  XMLHttpRequest doesn't seem to refactor as ES6, hence the combo syntax.
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState === 4 && this.status === 200) {
             const response = JSON.parse(xhttp.responseText);
             each(response);
         }
@@ -62,7 +63,7 @@ const rowBuilder = (thisWinner, tableContainer, thisIndex) => {
         console.log('number is undefined');
     }
     const pastIndex = String(lowerIndex);
-    const previousWinner = `<button class="previous_row" data-previous="${pastIndex}">Previous</button>`;
+    const previousWinner = `<button class="previous_row" data-previous="${pastIndex}"><i class="fas fa-step-backward"></i></button>`;
     let upperIndex = 0;
     if (thisIndex <= 0) {
         upperIndex = 0;
@@ -74,9 +75,9 @@ const rowBuilder = (thisWinner, tableContainer, thisIndex) => {
         console.log('number is undefined');
     }
     const futureIndex = String(upperIndex);
-    const nextWinner = `<button class="next_row" data-next="${futureIndex}">Next</button>`;
+    const nextWinner = `<button class="next_row" data-next="${futureIndex}"><i class="fas fa-step-forward"></i></button>`;
     // TODO set up a control so the next value can't be greater than the total number of winner.
-    const pauseButton = '<button class="pause_row">Pause</button>';
+    const pauseButton = '<button class="pause_row"><i class="fas fa-pause"></i></button>';
     const winnerRow = document.createElement('tr');
     winnerRow.setAttribute('data-index', `${myIndex}`);
     const winnerCells = `<td>${thisWinner.year}</td>\n
@@ -86,7 +87,7 @@ const rowBuilder = (thisWinner, tableContainer, thisIndex) => {
     winnerRow.innerHTML = winnerCells;
     tableContainer.appendChild(winnerRow);
     setTimeout(() => {
-        tableContainer.classList.add('swoosh');
+        winnerRow.classList.add('swoosh');
         setTimeout(() => {
             tableContainer.removeChild(winnerRow);
         }, 1000);
@@ -94,9 +95,10 @@ const rowBuilder = (thisWinner, tableContainer, thisIndex) => {
 };
 // Dynamically build a table header.
 const generateTableHead = (theContainer, Winners) => {
+    const tableHead = '';
     // It's necessary to be very specific about the type of Element in order to make certain property's available.
     // .createTHead is only available on HTMLTableElemnt types, not on the more general HTMLElement and Element.
-    const tableHead = theContainer.createTHead();
+    tableHead = theContainer.createTHead();
     const columnTitle = Object.keys(Winners[0]);
     for (const theColumn in columnTitle) {
         const columnIndex = parseInt(theColumn, 10); // Always parse as a decimal.
@@ -143,3 +145,35 @@ const each = (hugos) => {
         delay(rowsToBuild, theWinners, theContainer);
     });
 };
+System.register("modules/tableHeadGenerator", [], function (exports_1, context_1) {
+    "use strict";
+    var generateTableHead;
+    var __moduleName = context_1 && context_1.id;
+    return {
+        setters: [],
+        execute: function () {
+            // test 
+            //Dynamically build a table header.
+            exports_1("generateTableHead", generateTableHead = (theContainer, Winners) => {
+                // It's necessary to be very specific about the type of Element in order to make certain property's available.
+                // .createTHead is only available on HTMLTableElemnt types, not on the more general HTMLElement and Element.
+                const tableHead = theContainer.createTHead();
+                const columnTitle = Object.keys(Winners[0]);
+                for (const theColumn in columnTitle) {
+                    const columnIndex = parseInt(theColumn, 10); // Always parse as a decimal.
+                    if (columnIndex < 2) {
+                        const headerElement = document.createElement('th');
+                        if (columnIndex == 1) {
+                            headerElement.setAttribute('colspan', '3');
+                        }
+                        const awardTitleText = columnTitle[theColumn];
+                        const tidyTitleText = awardTitleText.replace(/_/g, '&nbsp;');
+                        const headerText = document.createTextNode(tidyTitleText);
+                        headerElement.appendChild(headerText);
+                        tableHead.appendChild(headerElement);
+                    }
+                }
+            });
+        }
+    };
+});

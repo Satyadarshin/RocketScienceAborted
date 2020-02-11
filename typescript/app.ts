@@ -10,6 +10,8 @@ when we fist load the page request the data sources ans store in memory (a varia
  * Line length limit of 100 characters?
 */
 
+// import { generateTableHead } from './modules/tableHeadGenerator';
+
 const chooseAward = (selectedAward: string) => {
   const caption = (document.querySelector('#outcome caption span') as Element); //  TODO check that this is not null  or throw an error  }
   caption.setAttribute('class', 'swoosh');
@@ -30,7 +32,7 @@ const chooseAward = (selectedAward: string) => {
   //  XMLHttpRequest doesn't seem to refactor as ES6, hence the combo syntax.
   const xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
+    if (this.readyState === 4 && this.status === 200) {
       const response = JSON.parse(xhttp.responseText);
       each(response);
     }
@@ -71,7 +73,7 @@ const rowBuilder = (
     console.log('number is undefined');
   }
   const pastIndex = String(lowerIndex);
-  const previousWinner: string = `<button class="previous_row" data-previous="${pastIndex}">Previous</button>`;
+  const previousWinner: string = `<button class="previous_row" data-previous="${pastIndex}"><i class="fas fa-step-backward"></i></button>`;
   let upperIndex: number = 0;
   if (thisIndex <= 0) {
     upperIndex = 0;
@@ -81,9 +83,9 @@ const rowBuilder = (
     console.log('number is undefined');
   }
   const futureIndex = String(upperIndex);
-  const nextWinner: string = `<button class="next_row" data-next="${futureIndex}">Next</button>`;
+  const nextWinner: string = `<button class="next_row" data-next="${futureIndex}"><i class="fas fa-step-forward"></i></button>`;
   // TODO set up a control so the next value can't be greater than the total number of winner.
-  const pauseButton: string = '<button class="pause_row">Pause</button>';
+  const pauseButton: string = '<button class="pause_row"><i class="fas fa-pause"></i></button>';
   const winnerRow: HTMLElement = document.createElement('tr');
   winnerRow.setAttribute('data-index', `${myIndex}`);
   const winnerCells: string = `<td>${thisWinner.year}</td>\n
@@ -93,17 +95,19 @@ const rowBuilder = (
   winnerRow.innerHTML = winnerCells;
   tableContainer.appendChild(winnerRow);
   setTimeout(() => {
-    tableContainer.classList.add('swoosh');
+    winnerRow.classList.add('swoosh');
     setTimeout(() => {
       tableContainer.removeChild(winnerRow);
     }, 1000);
   }, 1000);
 };
+
 // Dynamically build a table header.
 const generateTableHead = (theContainer: HTMLTableElement, Winners: Object) => {
+  const tableHead = '';
   // It's necessary to be very specific about the type of Element in order to make certain property's available.
   // .createTHead is only available on HTMLTableElemnt types, not on the more general HTMLElement and Element.
-  const tableHead = theContainer.createTHead();
+  tableHead = theContainer.createTHead();
   const columnTitle = Object.keys(Winners[0]);
   for (const theColumn in columnTitle) {
     const columnIndex = parseInt(theColumn, 10); // Always parse as a decimal.
@@ -121,7 +125,12 @@ const generateTableHead = (theContainer: HTMLTableElement, Winners: Object) => {
   }
 };
 // This function should manage the delay in building each row.
-const delay = (rowsToBuild: number, Winners: Object, theContainer: HTMLTableElement, nextHugo?: number) => {
+const delay = (
+  rowsToBuild: number,
+  Winners: Object,
+  theContainer: HTMLTableElement,
+  nextHugo?: number
+) => {
   if (typeof nextHugo === 'undefined') {
     nextHugo = 0;
     generateTableHead(theContainer, Winners);

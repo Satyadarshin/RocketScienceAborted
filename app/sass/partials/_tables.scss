@@ -34,9 +34,10 @@
         border-collapse: collapse;
     }
     .actions {
-        width: 100%;
+        width: 1rem;
+        flex-wrap: nowrap;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
     }
     tfoot {
         text-align: center;
