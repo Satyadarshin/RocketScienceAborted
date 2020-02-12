@@ -2,7 +2,6 @@
 look at the fetch api instead of xmlHttprequest: look at promises: look at aysnc await
 Break down into seperate files
 es6 template syntax
-when we fist load the page request the data sources ans store in memory (a variable).
 */
 
 /*
@@ -97,7 +96,10 @@ const rowBuilder = (
   setTimeout(() => {
     winnerRow.classList.add('swoosh');
     setTimeout(() => {
-      tableContainer.rem
+      tableContainer.removeChild(winnerRow)
+    }, 1000)
+  }, 1000)
+}
 
 // Dynamically build a table header.
 const generateTableHead = (theContainer: HTMLTableElement, Winners: Object) => {
@@ -110,7 +112,7 @@ const generateTableHead = (theContainer: HTMLTableElement, Winners: Object) => {
     if (columnIndex < 2) {
       const headerElement = document.createElement('th');
       if (columnIndex == 1) {
-        headerElement.setAttribute('colspan', '3');
+        headerElement.setAttribute('colspan', '4');
       }
       const awardTitleText = columnTitle[theColumn];
       const tidyTitleText = awardTitleText.replace(/_/g, '&nbsp;');
