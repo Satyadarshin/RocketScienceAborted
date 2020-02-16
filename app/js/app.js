@@ -1,15 +1,12 @@
-"use strict";
 /*
 look at the fetch api instead of xmlHttprequest: look at promises: look at aysnc await
 Break down into seperate files
-es6 template syntax
-when we fist load the page request the data sources ans store in memory (a variable).
+Yeoman.io > generator vinatge frontend
+consider npm install http-server -g
 */
-/*
- * Questions for Will:
- * Line length limit of 100 characters?
-*/
-// import { generateTableHead } from './modules/tableHeadGenerator';
+
+import { generateTableHead } from './modules/tableHeadGenerator.js';
+
 const chooseAward = (selectedAward) => {
     const caption = document.querySelector('#outcome caption span'); //  TODO check that this is not null  or throw an error  }
     caption.setAttribute('class', 'swoosh');
