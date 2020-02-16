@@ -5,7 +5,7 @@ Yeoman.io > generator vinatge frontend
 consider npm install http-server -g
 */
 
-import { generateTableHead } from './modules/tableHeadGenerator.js';
+import { generateTableHead } from './modules/tableHeadGenerator';
 
 const chooseAward = (selectedAward) => {
     const caption = document.querySelector('#outcome caption span'); //  TODO check that this is not null  or throw an error  }
