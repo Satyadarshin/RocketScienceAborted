@@ -9,3 +9,4 @@ export const each = (hugos) => {
     delay(rowsToBuild, theWinners, theContainer);
   });
 };
+export { each as default };

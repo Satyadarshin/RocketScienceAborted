@@ -1,5 +1,5 @@
 //Dynamically build a table header.
-export const generateTableHead = (
+const generateTableHead = (
   theContainer,
   Winners,
 ) => {
@@ -22,3 +22,4 @@ export const generateTableHead = (
     }
   }
 }
+export { generateTableHead as default };
