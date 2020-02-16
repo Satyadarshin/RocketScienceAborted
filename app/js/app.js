@@ -5,7 +5,7 @@ Yeoman.io > generator vinatge frontend
 consider npm install http-server -g
 */
 
-import { generateTableHead } from './modules/tableHeadGenerator';
+import { generateTableHead } from './modules/tableHeadGenerator.js';
 
 const chooseAward = (selectedAward) => {
     const caption = document.querySelector('#outcome caption span'); //  TODO check that this is not null  or throw an error  }
@@ -90,27 +90,7 @@ const rowBuilder = (thisWinner, tableContainer, thisIndex) => {
         }, 1000);
     }, 1000);
 };
-// Dynamically build a table header.
-const generateTableHead = (theContainer, Winners) => {
-    // It's necessary to be very specific about the type of Element in order to make certain property's available.
-    // .createTHead is only available on HTMLTableElemnt types, not on the more general HTMLElement and Element.
-    const tableHead = theContainer.createTHead();
-    const columnTitle = Object.keys(Winners[0]);
-    for (const theColumn in columnTitle) {
-        const columnIndex = parseInt(theColumn, 10); // Always parse as a decimal.
-        if (columnIndex < 2) {
-            const headerElement = document.createElement('th');
-            if (columnIndex == 1) {
-                headerElement.setAttribute('colspan', '4');
-            }
-            const awardTitleText = columnTitle[theColumn];
-            const tidyTitleText = awardTitleText.replace(/_/g, '&nbsp;');
-            const headerText = document.createTextNode(tidyTitleText);
-            headerElement.appendChild(headerText);
-            tableHead.appendChild(headerElement);
-        }
-    }
-};
+
 // This function should manage the delay in building each row.
 const delay = (rowsToBuild, Winners, theContainer, nextHugo) => {
     if (typeof nextHugo === 'undefined') {
