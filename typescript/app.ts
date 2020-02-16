@@ -1,7 +1,8 @@
 /*
 look at the fetch api instead of xmlHttprequest: look at promises: look at aysnc await
 Break down into seperate files
-es6 template syntax
+Yeoman.io > generator vinatge frontend
+consider npm install http-server -g
 */
 
 /*
