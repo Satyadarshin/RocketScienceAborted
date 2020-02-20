@@ -22,12 +22,12 @@ const chooseAward = (selectedAward) => {
     const capitaliseCaption = [];
     awardCaption.split(' ').forEach(element => {
       capitaliseCaption.push(
-        element.charAt(0).toUpperCase() + element.slice(1)
+        element.charAt(0).toUpperCase() + element.slice(1);
       );
     });
     caption.textContent = capitaliseCaption.join(' ');
   }, 800);
-  const dataSource = `data/${selectedAward}`; 
+  const dataSource = `data/${selectedAward}`;
   //  XMLHttpRequest doesn't seem to refactor as ES6, hence the combo syntax.
   const xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -43,8 +43,8 @@ const chooseAward = (selectedAward) => {
 const theNebulas = document.querySelector('.nebula_best_novel').addEventListener('click', () => { chooseAward('nebula_award_novels'); });
 const theHugos = document.querySelector('.hugo_best_novel').addEventListener('click', () => { chooseAward('hugo_award_novels'); });
 // const capitaliseMe = (startsLowerCase) => {
-//    startsLowerCase.split(' ').forEach((element) => {
-//      capitaliseThis.push(element.charAt(0).toUpperCase() +  element.slice(1));
-//      capitalise.join(' ');
-//    });
-//  }
+//   startsLowerCase.split(' ').forEach((element) => {
+//     capitaliseThis.push(element.charAt(0).toUpperCase() +  element.slice(1));
+//     capitalise.join(' ');
+//   });
+// }

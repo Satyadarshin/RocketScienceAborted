@@ -2,7 +2,7 @@
 import { generateTableHead } from './tableHeadGenerator.js';
 import { rowBuilder } from './rowBuilder.js';
 
-const delay = (
+export const delay = (
   rowsToBuild,
   Winners,
   theContainer,
@@ -24,4 +24,4 @@ const delay = (
     }, 1000);
   }
 };
-export { delay as default };
+// export { delay as default };
