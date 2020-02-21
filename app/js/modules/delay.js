@@ -1,5 +1,5 @@
 // This function should manage the delay in building each row.
-import { generateTableHead } from './tableHeadGenerator.js';
+import { generateTableHead } from './tableHeadGenerators.js';
 import { rowBuilder } from './rowBuilder.js';
 
 export const delay = (

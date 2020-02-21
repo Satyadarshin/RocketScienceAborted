@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable import/prefer-default-export */
 //Dynamically build a table header.
 export const generateTableHead = (
   theContainer,
@@ -19,6 +21,20 @@ export const generateTableHead = (
       const headerText = document.createTextNode(tidyTitleText);
       headerElement.appendChild(headerText);
       tableHead.appendChild(headerElement);
+      const controlers = `
+        <th class="actions">
+          <button class="previous_row" data-previous="#"><i class="fas fa-step-backward"></i></button>
+          <button class="pause_row"><i class="fas fa-pause"></i></button>
+          <button class="next_row" data-next="#"><i class="fas fa-step-forward"></i></button>
+        </th>
+      `;
+      // const controlers = `
+      //   <th class="actions">
+      //     <button class="previous_row" data-previous="${stepBackward}"><i class="fas fa-step-backward"></i></button>
+      //     <button class="pause_row"><i class="fas fa-pause"></i></button>
+      //     <button class="next_row" data-next="${stepForward}"><i class="fas fa-step-forward"></i></button>
+      //   </th>
+      // `;
     }
   }
 }

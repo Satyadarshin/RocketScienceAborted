@@ -7,7 +7,18 @@ consider npm install http-server -g
 
 import { each } from './modules/each.js';
 
-// TODO same as above: this is a quick is a quick way to get the variable to validate
+
+const acquireDataFallback = (dataSource) => {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+      const response = JSON.parse(xhttp.responseText);
+      each(response);
+    }
+  };
+  xhttp.open('GET', `${dataSource}.json`, true);
+  xhttp.send();
+};
 
 const chooseAward = (selectedAward) => {
   const caption = document.querySelector('#outcome caption span'); //  TODO check that this is not null  or throw an error  }
@@ -20,24 +31,30 @@ const chooseAward = (selectedAward) => {
     // Present as a table caption.
     const awardCaption = selectedAward.replace(/_/g, ' ');
     const capitaliseCaption = [];
-    awardCaption.split(' ').forEach(element => {
+    awardCaption.split(' ').forEach((element) => {
       capitaliseCaption.push(
-        element.charAt(0).toUpperCase() + element.slice(1);
+        element.charAt(0).toUpperCase() + element.slice(1),
       );
     });
     caption.textContent = capitaliseCaption.join(' ');
   }, 800);
-  const dataSource = `data/${selectedAward}`;
-  //  XMLHttpRequest doesn't seem to refactor as ES6, hence the combo syntax.
-  const xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState === 4 && this.status === 200) {
-      const response = JSON.parse(xhttp.responseText);
-      each(response);
-    }
-  };
-  xhttp.open('GET', `${dataSource}.json`, true);
-  xhttp.send();
+  const dataSource = `./data/${selectedAward}.json`;
+  fetch(dataSource)
+    .then(
+      (response) => {
+        if (response.status !== 200) {
+          console.log(`Looks like there was a problem. Status Code: ${response.status}`);
+          return;
+        }
+        response.json().then((data) => {
+          each(data);
+        });
+      },
+    )
+    .catch((err) => {
+      console.log('Fetch Error ', err);
+      acquireDataFallback(dataSource);
+    });
 };
 
 const theNebulas = document.querySelector('.nebula_best_novel').addEventListener('click', () => { chooseAward('nebula_award_novels'); });
