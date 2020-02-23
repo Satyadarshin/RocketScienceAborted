@@ -529,10 +529,11 @@ header figure figcaption p {
 
 #outcome td:nth-child(4) {
   width: 7rem;
-  border: 1px solid red;
 }
 
 #outcome .actions {
+  width: 8rem;
+  float: right;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   display: -webkit-box;

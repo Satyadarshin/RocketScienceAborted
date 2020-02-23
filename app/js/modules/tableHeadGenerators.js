@@ -1,6 +1,7 @@
+/* eslint-disable guard-for-in */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable import/prefer-default-export */
-//Dynamically build a table header.
+// Dynamically build a table header.
 export const generateTableHead = (
   theContainer,
   Winners,
@@ -10,32 +11,41 @@ export const generateTableHead = (
   const tableHead = theContainer.createTHead();
   const columnTitle = Object.keys(Winners[0]);
   for (const theColumn in columnTitle) {
-    const columnIndex = parseInt(theColumn, 10); // Always parse as a decimal.
+    // Always parse as a decimal.
+    const columnIndex = parseInt(theColumn, 10);
+    let theColspan = '';
     if (columnIndex < 2) {
-      const headerElement = document.createElement('th');
-      if (columnIndex == 1) {
-        headerElement.setAttribute('colspan', '3');
+      if (columnIndex === 1) {
+        // headerElement.setAttribute('colspan', '3');
+      theColspan = ' colspan="2"';
       }
+      else {
+        theColspan = '';
+      }
+      // const headerElement = document.createElement('th');
+      // Create the table header
       const awardTitleText = columnTitle[theColumn];
       const tidyTitleText = awardTitleText.replace(/_/g, '&nbsp;');
-      const headerText = document.createTextNode(tidyTitleText);
-      headerElement.appendChild(headerText);
-      tableHead.appendChild(headerElement);
-      const controlers = `
-        <th class="actions">
+      tableHead.innerHTML = `
+      <th>Year</th>
+      <th${theColspan}>${tidyTitleText}</th>
+      <th>
+        <div class="actions">
           <button class="previous_row" data-previous="#"><i class="fas fa-step-backward"></i></button>
           <button class="pause_row"><i class="fas fa-pause"></i></button>
           <button class="next_row" data-next="#"><i class="fas fa-step-forward"></i></button>
-        </th>
-      `;
-      // const controlers = `
-      //   <th class="actions">
-      //     <button class="previous_row" data-previous="${stepBackward}"><i class="fas fa-step-backward"></i></button>
-      //     <button class="pause_row"><i class="fas fa-pause"></i></button>
-      //     <button class="next_row" data-next="${stepForward}"><i class="fas fa-step-forward"></i></button>
-      //   </th>
-      // `;
+        </div>
+      </th>
+    `;
+    // <th${theColspan}>${tidyTitleText}</th>
+    // <th>
+    //   <div class="actions">
+    //     <button class="previous_row" data-previous="${stepBackward}"><i class="fas fa-step-backward"></i></button>
+    //     <button class="pause_row"><i class="fas fa-pause"></i></button>
+    //     <button class="next_row" data-next="${stepForward}"><i class="fas fa-step-forward"></i></button>
+    //   </div>
+    // </th>
+    // `;
     }
   }
-}
-// export { generateTableHead as default };
+};
