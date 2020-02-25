@@ -10,11 +10,11 @@ article {
     .welcome { 
         margin-top: .2rem;
         display: grid;
-        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-columns: 2fr 2fr 2fr;
         grid-column-gap: 5px;
         .welcome-left {
             padding: 0;
-            background-color: silver;
+            background-color:$sand;
             blockquote {
                 margin: 0 .5rem;
                 padding: 0;

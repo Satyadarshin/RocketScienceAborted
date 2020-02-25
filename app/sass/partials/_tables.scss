@@ -2,13 +2,16 @@
     margin: 2rem 0;
     padding: 1rem 0 2rem;
     border-radius: 10px;
-    border: 1px solid $dark;
-    box-shadow: 5px 5px 8px 6px rgba(32,32,32,.65);
+    border: 1px solid $neutral;
+}
+.panel_active {
+    box-shadow: 0px 0px 6px 2px rgb(32,32,32);
+    transition: opacity 2s ease-in 1s;
 }
 #outcome {
     width: 98%;
     margin: 0 auto;
-    border: 1px solid $dark;
+    border: 1px solid $neutral;
     border-collapse: collapse;    
     caption {
         border: 1px solid $dark;

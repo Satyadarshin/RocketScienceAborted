@@ -1,0 +1,13 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    p {
+        display: flex;
+    }
+    #award-bodies {
+        a {
+display: block;
+border: 1px solid $oil;
+        }
+    } 
+}

@@ -1,7 +1,7 @@
 /* Some of the ideas about organising the styles came from http://bradfrost.com/blog/post/atomic-web-design/ */
 
 /* These first three files cover a basic browser reset and instantiate shared variables and mixins. */
-@import '.modules/mixins';
+@import './modules/mixins';
 @import "./vendor/normalize";
 @import "./modules/colours";
 @import "./modules/typography";
@@ -13,7 +13,7 @@
 @import "./partials/header";
 // @import "./partials/article";
 // @import "./partials/sidebar";
-// @import "./partials/footer";
+@import "./partials/footer";
 
 /* Molecules */
 @import "./partials/tables";
