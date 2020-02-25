@@ -7,7 +7,6 @@ consider npm install http-server -g
 
 import { each } from './modules/each.js';
 
-
 const acquireDataFallback = (dataSource) => {
   const xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {

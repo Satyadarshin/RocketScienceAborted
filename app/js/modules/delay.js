@@ -24,4 +24,3 @@ export const delay = (
     }, 1000);
   }
 };
-// export { delay as default };

@@ -17,7 +17,7 @@ export const generateTableHead = (
     if (columnIndex < 2) {
       if (columnIndex === 1) {
         // headerElement.setAttribute('colspan', '3');
-      theColspan = ' colspan="2"';
+        theColspan = ' colspan="2"';
       }
       else {
         theColspan = '';
@@ -29,23 +29,7 @@ export const generateTableHead = (
       tableHead.innerHTML = `
       <th>Year</th>
       <th${theColspan}>${tidyTitleText}</th>
-      <th>
-        <div class="actions">
-          <button class="previous_row" data-previous="#"><i class="fas fa-step-backward"></i></button>
-          <button class="pause_row"><i class="fas fa-pause"></i></button>
-          <button class="next_row" data-next="#"><i class="fas fa-step-forward"></i></button>
-        </div>
-      </th>
     `;
-    // <th${theColspan}>${tidyTitleText}</th>
-    // <th>
-    //   <div class="actions">
-    //     <button class="previous_row" data-previous="${stepBackward}"><i class="fas fa-step-backward"></i></button>
-    //     <button class="pause_row"><i class="fas fa-pause"></i></button>
-    //     <button class="next_row" data-next="${stepForward}"><i class="fas fa-step-forward"></i></button>
-    //   </div>
-    // </th>
-    // `;
     }
   }
 };

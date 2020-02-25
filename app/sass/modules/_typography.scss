@@ -6,15 +6,13 @@ $heading: "Saira Semi Condensed", sans-serif;
 
 $body: "Bitter", serif;
 
-@mixin headings($h-fsz: 1.75rem, $h-ff: $heading, $h-clr: $oil) {
-    font-family: $h-ff;
-    font-size: $h-fsz;
-    color: $h-clr;
+h1, h2, h3 {
+    @include headings();
+}
+p, th, th {
+    @include body();
 }
 
-@mixin body($b-fsz: $root-size, $b-clr: $oil, $b-ff: $body){
-    font-family: $b-ff;
-    font-size: $b-fsz;
-    color: $b-clr;
-    line-height: 1.5;
+a {
+    text-decoration: none;
 }

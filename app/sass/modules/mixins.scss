@@ -1,0 +1,12 @@
+@mixin headings($h-fsz: 1.75rem, $h-ff: $heading, $h-clr: $oil) {
+    font-family: $h-ff;
+    font-size: $h-fsz;
+    color: $h-clr;
+}
+
+@mixin body($b-fsz: $root-size, $b-clr: $oil, $b-ff: $body){
+    font-family: $b-ff;
+    font-size: $b-fsz;
+    color: $b-clr;
+    line-height: 1.5;
+}

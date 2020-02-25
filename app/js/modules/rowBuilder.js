@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { controllers } from './controlers.js';
+import { controlers } from './controlers.js';
 
 export const rowBuilder = (
   thisWinner,
@@ -15,7 +15,7 @@ export const rowBuilder = (
   // const buildStepForward = (thisIndex <= 0) ? 1 : thisIndex + 1;
   // const stepForward = buildStepForward.toString();
   // TODO set up a control so the next value can't be greater than the total number of winners.
-  controllers(thisIndex.toString());
+  controlers(thisIndex.toString());
   const winnerRow = document.createElement('tr');
   winnerRow.setAttribute('data-index', `${thisIndex.toString()}`);
   const winnerCells = `
@@ -32,4 +32,3 @@ export const rowBuilder = (
     }, 1000);
   }, 1000);
 };
-// export { rowBuilder as default };

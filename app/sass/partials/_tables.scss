@@ -42,24 +42,27 @@
         border-top: 1px solid $dark;
         border-collapse: collapse;
     }
-    .actions {
-        width: 8rem;float: right;
-        button {
-            width: 2rem;
-            height: 2rem;
-            background-color: $neutral;
-            border: 1px solid $dark; 
-            border-radius: 3px;
-        }
-        flex-wrap: nowrap;
-        display: flex; 
-        justify-content: space-between;
-        flex-direction: row;
-    }
     tfoot {
         text-align: center;
         background-color: $dark;
         color: $white;
+#toolbar{
+    #actions {
+        width: 8rem;
+        float: right;
+            button {
+                width: 2rem;
+                height: 2rem;
+                background-color: $neutral;
+                border: 1px solid $oil; 
+                border-radius: 5px;
+            }
+            flex-wrap: nowrap;
+            display: flex; 
+            justify-content: space-between;
+            flex-direction: row;
+        }
+        }
     }
 }
 .swoosh {

@@ -344,22 +344,26 @@ template {
   display: none;
 }
 
-/* Basic global project styles */
-body {
-  background-color: #fafafa;
-}
-
 h1, h2, h3 {
   font-family: "Saira Semi Condensed", sans-serif;
   font-size: 1.75rem;
   color: #313330;
 }
 
-p {
+p, th, th {
   font-family: "Bitter", serif;
   font-size: 16px;
   color: #313330;
   line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Basic global project styles */
+body {
+  background-color: #fafafa;
 }
 
 article {
@@ -531,7 +535,13 @@ header figure figcaption p {
   width: 7rem;
 }
 
-#outcome .actions {
+#outcome tfoot {
+  text-align: center;
+  background-color: #b4b4b4;
+  color: #fafafa;
+}
+
+#outcome tfoot #toolbar #actions {
   width: 8rem;
   float: right;
   -ms-flex-wrap: nowrap;
@@ -548,18 +558,12 @@ header figure figcaption p {
           flex-direction: row;
 }
 
-#outcome .actions button {
+#outcome tfoot #toolbar #actions button {
   width: 2rem;
   height: 2rem;
   background-color: #e6e6e6;
-  border: 1px solid #b4b4b4;
-  border-radius: 3px;
-}
-
-#outcome tfoot {
-  text-align: center;
-  background-color: #b4b4b4;
-  color: #fafafa;
+  border: 1px solid #313330;
+  border-radius: 5px;
 }
 
 .swoosh {
