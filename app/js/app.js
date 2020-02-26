@@ -5,7 +5,8 @@ Yeoman.io > generator vinatge frontend
 consider npm install http-server -g
 */
 
-import { each } from './modules/each.js';
+import { generateTableHead } from './modules/tableHeadGenerators.js';
+import { rowBuilder } from './modules/rowBuilder.js';
 
 const acquireDataFallback = (dataSource) => {
   const xhttp = new XMLHttpRequest();
@@ -66,3 +67,37 @@ const theHugos = document.querySelector('.hugo_best_novel').addEventListener('cl
 //     capitalise.join(' ');
 //   });
 // }
+
+let currentNovelIndex = 0;
+
+export const delay = (
+  rowsToBuild,
+  Winners,
+  theContainer
+) => {
+  if (typeof currentNovelIndex === 'undefined') {
+    generateTableHead(theContainer, Winners);
+  }
+  if (rowsToBuild === 0) {
+    console.log('End of row building.');
+  } else {
+    setTimeout(() => {
+      console.log(typeof theContainer);
+      rowBuilder(Winners[currentNovelIndex], theContainer, currentNovelIndex);
+      rowsToBuild--;
+      currentNovelIndex++;
+      console.log('Current index: ', currentNovelIndex);
+      delay(rowsToBuild, Winners, theContainer, currentNovelIndex);
+    }, 1000);
+  }
+};
+
+export const each = (hugos) => {
+  // todo: hoist this variable out because it's searched for twice
+  const theContainer = document.querySelector('#outcome');
+  Object.keys(hugos).forEach((novel) => {
+    const theWinners = hugos[novel];
+    const rowsToBuild = Object.keys(theWinners).length;
+    delay(rowsToBuild, theWinners, theContainer);
+  });
+};
