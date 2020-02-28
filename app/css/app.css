@@ -372,6 +372,10 @@ article {
   margin-right: auto;
 }
 
+article section {
+  margin-bottom: 2rem;
+}
+
 article .welcome {
   margin-top: .2rem;
   display: -ms-grid;
@@ -640,37 +644,41 @@ footer #award-bodies a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   border: 1px solid gray;
   padding: .5rem;
 }
 
+.the_awards .award_selector .best_novels {
+  width: 30%;
+}
+
 .the_awards .award_selector button {
+  width: 18rem;
   margin-top: .5rem;
   padding: .5rem;
-  border: 1px solid darkcyan;
+  border: 1px solid grey;
+  color: grey;
   border-radius: 3px;
 }
 
-.the_awards .award_selector button.nebula_best_novel {
+.the_awards .award_selector button.has_data {
+  border: 1px solid darkcyan;
   background-color: aqua;
+  color: black;
 }
 
-.the_awards .award_selector button.nebula_best_novel:hover {
-  background-color: aquamarine;
-}
-
-.the_awards .award_selector button.hugo_best_novel {
-  background-color: aqua;
-}
-
-.the_awards .award_selector button.hugo_best_novel:hover {
+.the_awards .award_selector button.has_data:hover {
   background-color: aquamarine;
 }
 /*# sourceMappingURL=app.css.map */

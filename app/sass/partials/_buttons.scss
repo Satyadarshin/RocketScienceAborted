@@ -8,28 +8,36 @@
         text-align: center;
     }
     .award_selector{
+        .best_novels {
+            width: 30%;
+        }
         display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-around;
         border: 1px solid $dark;
         padding: .5rem;
-        button {
+        button { 
+            width: 18rem;
             margin-top: .5rem;
             padding: .5rem;
-            border: 1px solid darkcyan;
+            border: 1px solid grey;
+            color: grey;
             border-radius: 3px;
             &.nebula_best_novel {
-                background-color: aqua;
-                &:hover {
-                    background-color: aquamarine
-                }
+               
             }
             &.hugo_best_novel {
+            }
+            &.has_data {
+                border: 1px solid darkcyan;
                 background-color: aqua;
+                color: black;
                 &:hover {
                     background-color: aquamarine
                 }
+            
             }
         }
     }

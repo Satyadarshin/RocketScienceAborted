@@ -15,8 +15,7 @@ export const delay = (
   if (rowsToBuild === 0) {
     console.log('End of row building.');
   } else {
-    setTimeout(() => {
-      console.log(typeof theContainer);
+    setInterval(() => {
       rowBuilder(Winners[nextHugo], theContainer, nextHugo);
       rowsToBuild--;
       nextHugo++;
