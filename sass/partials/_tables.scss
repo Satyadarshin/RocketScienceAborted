@@ -49,6 +49,9 @@
         text-align: center;
         background-color: $dark;
         color: $white;
+        border-bottom: 1px solid $dark;
+        border-left: 1px solid $dark;
+        border-right: 1px solid $dark;
 #toolbar{
     #actions {
         width: 8rem;

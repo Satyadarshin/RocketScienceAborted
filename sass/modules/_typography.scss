@@ -9,7 +9,7 @@ $body: "Bitter", serif;
 h1, h2, h3 {
     @include headings();
 }
-p, th, th {
+p, th, th, blockquote  {
     @include body();
 }
 

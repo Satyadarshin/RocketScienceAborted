@@ -10,49 +10,45 @@
 </head>
 <body>
     <header>
-        <figure>
-            <img src="media/images/mars-surface.jpg" 
-            srcset=""
-            sizes=""
-            class="splash_image" alt="The surface of the planet Mars">
-            <figcaption>
-                <h1>Rocket Science</h1>
-                <p>Winners of the major SF literary prizes</p>
-            </figcaption>
-        </figure>
+            <figure>
+                <img src="media/images/mars-surface.jpg" 
+                srcset=""
+                sizes=""
+                class="splash_image" alt="The surface of the planet Mars">
+                <figcaption>
+                    <h1>Rocket Science</h1>
+                    <p>Winners of the major SF literary prizes</p>
+                </figcaption>
+            </figure>
+
     </header>
-    <article> 
+    <article class="canvas"> 
         <section class="welcome">
             <div class="welcome-left">
-                <img src="" alt="">
                 <blockquote>
-                    <q>What description of clouds and sunsets was to the old novelist, description of scientific apparatus and methods is to the modern Scientific Detective writer.</q>
-                    <p>Hugo Gernsback</p> 
+                    <h2 class="about-title">Science Fiction: a literary genre</h2>
+                    <p>Science fiction (sometimes called sci-fi or just SF) is a genre of speculative fiction that typically deals with imaginative and futuristic concepts such as advanced science and technology, space exploration, time travel, parallel universes, and extraterrestrial life. It has been called the "literature of ideas", and often explores the potential consequences of scientific, social, and technological innovations.</p>
                 </blockquote>
             </div>
-            <div class="welcome-middle">
-                <h2 class="about-title">Science Fiction as a literary genre</h2>
+            <div class="welcome-right">
                 <blockquote>
                     <q>Today we live in a society in which spurious realities are manufactured by the media, by governments, by big corporations, by religious groups, political groups... So I ask, in my writing, What is real? Because unceasingly we are bombarded with pseudo-realities manufactured by very sophisticated people using very sophisticated electronic mechanisms. I do not distrust their motives; I distrust their power. They have a lot of it. And it is an astonishing power: that of creating whole universes, universes of the mind. I ought to know. I do the same thing.</q> 
                     <p>Philip K. Dick </p>         
                 </blockquote> 
             </div>
-            <div class="welcome-right">
-                <blockquote>
-                    <q>Science fiction is the most important literature in the history of the world, because it's the history of ideas, the history of our civilization birthing itself. [...] Science fiction is central to everything we've ever done, and people who make fun of science fiction writers don't know what they're talking about.</q>
-                <p>Ray Bradbury</p>
-              </div>
+          
         </section>
         <section class="award-tables">
             <div class="the_awards">
                 <p>View an award list</p>
                 <div class="award_selector">
                     <div class="best_novels">
-                        <h3>Best Novels</h3>
+                        <h3>Winners: Best Novel</h3>
                         <button class="nebula_best_novel has_data">Nebula Award</button>
                         <button class="hugo_best_novel has_data">Hugo Award</button>
                         <button class="clarke_best_novel">Arthur C. Clarke Award</button>
-                        <button class="csmpbell_best_novel">John W. Campbell Award</button>
+                        <button class="campbell_best_novel">John W. Campbell Award</button>
+                        <button class="combined_awards">Combined awards</button>
                     </div>
                 </div> 
             </div>
@@ -70,8 +66,15 @@
         <script type="module" src="js/app.js"></script>
     </article>
     <footer>
-        <p>Rocket Science &copy; Satyadarshin 2020</p>
-        <p id="award-bodies"><a href="http://www.thehugoawards.org/">The Hugo Award</a> <a href="https://nebulas.sfwa.org/">The Nebula Award</a> <a href="https://clarkeaward.com/">The Arthur C. Clarke Award</a> <a href="http://www.sfcenter.ku.edu/campbell.htm" title="John W. Campbell Memorial Award for Best Science Fiction Novel">The John W. Campbell Memorial Award</a></p>
+        <div class="canvas">
+            <p>Rocket Science &copy; Satyadarshin 2020</p>
+            <p id="award-bodies">
+                <button><a href="http://www.thehugoawards.org/">The Hugo Award</a> </button>
+                <button><a href="https://nebulas.sfwa.org/">The Nebula Award</a></button> 
+                <button><a href="https://clarkeaward.com/">The Arthur C. Clarke Award</a> </button>
+                <button><a href="http://www.sfcenter.ku.edu/campbell.htm" title="John W. Campbell Memorial Award for Best Science Fiction Novel">The John W. Campbell Memorial Award</a></button>
+            </p>
+        </div>
 
     </footer>
     </body>

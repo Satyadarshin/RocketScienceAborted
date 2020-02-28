@@ -1,0 +1,43 @@
+footer {
+    height: 10vh;
+    padding: 3rem 0;
+    margin-top: 3rem;
+    background-color:$gold;
+    .canvas {
+        @include canvas;
+        display: flex;
+        justify-content: space-between;
+        #award-bodies {
+            width: 33%;
+            display: flex;
+            flex-wrap: wrap;
+            button {
+                background-color: $gold;
+                //border: 1px solid $red;
+                width: 48%;
+                margin: 0 0 5px 5px; 
+                border-radius: 3px;
+                border-top: 1px solid $dark-gold;
+                border-left: 1px solid $dark-gold;
+                border-right: 1px solid $light-gold;
+                border-bottom: 1px solid $light-gold;
+                a {
+                    border-top: 1px solid $light-gold;
+                    border-left: 1px solid $light-gold;
+                    border-right: 1px solid $dark-gold;
+                    border-bottom: 1px solid $dark-gold;
+                    text-align: center; 
+                    border-radius: 4px;
+                    padding: .5rem ;
+                    display: block; 
+                    width: 99.5%; color: $oil;
+                    margin: 0 0 0 -.5rem;
+                    &:hover {
+                        color: $white;
+                        background-color: $red;
+                    }
+                }
+            }
+        }
+    } 
+}

@@ -8,34 +8,41 @@
         text-align: center;
     }
     .award_selector{
-        .best_novels {
-            width: 30%;
-        }
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         align-items: flex-start;
-        justify-content: space-around;
+        justify-content: space-between;
         border: 1px solid $dark;
-        padding: .5rem;
+        padding: .5rem .5rem 1.5rem .5rem;
+        .best_novels {
+            margin-top: -.5rem;
+            margin-left: 1rem;
+            width: 30%;
+            background-color: $sand;
+            padding: .5rem;
+            h3 {
+                margin: 0 0 1rem 0;
+            }
+        }
         button { 
-            width: 18rem;
+            width: 48%;
+            .single_award {
+            }
+            .combined_awards {
+                width: 100% !important;
+            }
             margin-top: .5rem;
             padding: .5rem;
             border: 1px solid grey;
             color: grey;
             border-radius: 3px;
-            &.nebula_best_novel {
-               
-            }
-            &.hugo_best_novel {
-            }
             &.has_data {
                 border: 1px solid darkcyan;
-                background-color: aqua;
+                background-color: $red;
                 color: black;
                 &:hover {
-                    background-color: aquamarine
+                    background-color: $orange;
                 }
             
             }
