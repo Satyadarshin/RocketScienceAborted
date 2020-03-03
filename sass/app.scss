@@ -3,20 +3,20 @@
 /* These first three files cover a basic browser reset and instantiate shared variables and mixins. */
 @import './modules/mixins';
 @import "./vendor/normalize";
-@import "./modules/colours";
+@import "./modules/colours"; 
 @import "./modules/typography";
 
 /* Basic global project styles */
-@import "./partials/base";
+@import "./partials/scaffold";
 
 /* Page sections */
 @import "./partials/header";
+@import "./partials/introduction";
 // @import "./partials/article";
-// @import "./partials/sidebar";
 @import "./partials/footer";
 
 /* Molecules */
-@import "./partials/tables";
+@import "./partials/award-tables";
 
 /* Atoms */
-@import "./partials/buttons"
+@import "./partials/award-selectors"

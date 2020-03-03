@@ -1,0 +1,11 @@
+body {
+    background-color: $white; 
+    .canvas{
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+        section {
+            margin-bottom: 2rem;
+        }
+    }
+}

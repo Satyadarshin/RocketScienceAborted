@@ -1,0 +1,17 @@
+.site_introduction { 
+    margin-top: .2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 5px;
+    .theme_intro {
+        padding: 0;
+        background-color: $sand;
+        .theme_title {
+            margin-top: 0; 
+        }
+    }
+    .intro_quote {
+        padding: 0 .5rem;
+    
+    }
+}

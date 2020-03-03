@@ -1,0 +1,78 @@
+#awards {
+    p {
+        margin: 0;
+        border-radius: 5px 0 0 0;
+        padding: .35rem;
+        background-color: $dark;
+        color: $white;
+        text-align: center;
+    }
+    #selector_sets{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        border: 1px solid $dark;
+        border-radius: 0 0 0 5px;
+
+        padding: .5rem .5rem 1.5rem .5rem;
+        #best_novels {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 3rem 3rem 3rem;
+            grid-column-gap: 5px;
+            margin-top: -.5rem;
+            background-color: $sand;
+            padding: 0 .5rem .5rem .5rem;
+            h3 { 
+                margin-bottom: .5rem;
+                grid-column: 1 / span 4;
+                grid-row: 1;
+            }
+            button { 
+                background-color: $neutral;
+                margin-top: .5rem;
+                padding: .5rem;
+                border: 1px solid $dark;
+                color: $dark;
+                border-radius: 3px; 
+            &:hover {
+                background-color: $neutral;
+            }
+            }
+            .has_data {
+                border: 1px solid $orange;
+                background-color: $red;
+                color: $white;
+                &:hover {
+                    background-color: $orange;
+                }
+            }
+            button:not(.has_data){
+                // border: 1px solid red;
+            }
+            .nebula_best_novel { 
+                grid-column: 1 / span 2;
+                grid-row: 2;
+            }
+            .hugo_best_novel {
+                grid-column: 3 / span 2;
+                grid-row: 2;
+            }
+            .clarke_best_novel {
+                grid-column: 1 / span 2;
+                grid-row: 3;
+            }
+            .campbell_best_novel {
+                grid-column: 3 / span 2;
+                grid-row: 3;
+            }
+            .combined_awards {
+                grid-column: 1 / span 4;
+                grid-row: 4;
+            }
+        }
+    }
+}
+
