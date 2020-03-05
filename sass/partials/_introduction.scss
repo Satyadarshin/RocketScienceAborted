@@ -2,15 +2,24 @@
     margin-top: .2rem;
     display: grid;
     grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-column-gap: 5px;
     .theme_intro {
+        grid-column: 1 / span 3;
+        grid-row: 1 / span 2;
         padding: 0;
         background-color: $sand;
         .theme_title {
             margin-top: 0; 
         }
     }
+    .recent_history {
+        grid-column: 1 / span 2;
+        grid-row: 3 / span 2;
+    }
     .intro_quote {
+        // grid-column: 4 / span 5;
+        // grid-row: 1 / span 4;
         padding: 0 .5rem;
     
     }

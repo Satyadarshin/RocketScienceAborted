@@ -20,9 +20,9 @@ const acquireDataFallback = (dataSource) => {
 };
 
 const chooseAward = (selectedAward) => {
-  const resultsPanel = document.querySelector('#results_panel');
+  const resultsPane = document.querySelector('#results_pane');
   resultsPanel.classList.add('panel_active');
-  const caption = document.querySelector('#outcome caption span'); //  TODO check that this is not null  or throw an error  }
+  const caption = document.querySelector('#category caption span'); //  TODO check that this is not null  or throw an error  }
   caption.setAttribute('class', 'swoosh');
   // The set timeout operation is to slow the transition down.
   setTimeout(() => {
