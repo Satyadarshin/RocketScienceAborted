@@ -1,55 +1,54 @@
-.site_introduction { 
-    margin: .2rem 0 2rem 0; 
+.site_introduction {
+    margin: .2rem 0 2rem 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(4, 10rem);
     grid-column-gap: 5px;
-    grid-template-areas: 
+    grid-template-areas:
     "intro intro quote"
     "intro intro quote"
     "history history quote"
     "history history quote";
-    .theme_intro { 
+    .theme_intro {
         grid-area: intro;
         display: flex;
+        align-items: stretch;
         justify-content: space-between;
         padding: 1rem;
-        background-color: $sand;
+        background-color: $moon-sand;
         .theme_title {
-            border: 1px solid red;
-            // flex-basis: 40%;
-            width: 400px;
-            margin-right: 5rem;
-            margin-top: 0; 
-        }
-        .theme { 
-            // columns: 250px 2;
-// flex-basis: 60%;
+            margin-top: 0;
+            flex: 0 0 6em;
+            margin-right: 3rem;
         }
     }
-    .recent_history {padding: 1rem;
-        grid-area: history;   
-        display: flex; 
+    .recent_history {
+        padding: 1rem;
+        grid-area: history;
+        display: flex;
+        align-items: flex-start;
         justify-content: space-between;
         padding: 1rem;
-        background-color: $light-sand;
-        h3 {    
-            border: 1px solid red;
-            // border: 1px solid red;
-            // flex-basis: 40%;
-            width: 400px;
-            margin-right: 5rem;
-        }   
-        img { margin-left: 5rem;
-            // flex-basis: 20%;
-            order: 3;   
-            height: 250px;
-            display: block; margin-top: 1rem;
+        background-color: $xtra-light-moon-sand;
+        h3 {
+            margin-top: 0;
+            flex: 0 0 6em;
+            margin-right: 3rem;
         }
-        .publication {    
-            flex-basis: 60%;
+        img { 
+            order: 3;
+            height: 100%;
+            display: block; 
+        }
+        .publication { 
+
+            margin-right: 2rem;
+
+            h4 {
+                margin-top: 0;
+            }
             .publication_meta {
-                margin-top: -1rem;;
+                margin-top: 1rem;
             }
             .awards_meta {
                 display: flex;
@@ -66,11 +65,11 @@
         display: flex;
         align-items: center;
         justify-items: center;
-        blockquote {  
+        blockquote {
             border-bottom: 12px solid $neutral;
             padding-left: 1rem;
             font-size: 128%;
-            padding-top: 2rem;           
+            padding-top: 2rem;
             text-indent: -2rem;
             border-top: 12px solid $neutral;
             q {

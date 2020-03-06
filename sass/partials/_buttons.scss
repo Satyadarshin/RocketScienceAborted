@@ -13,13 +13,13 @@
         flex-wrap: wrap;
         align-items: flex-start;
         justify-content: space-between;
-        border: 1px solid $dark;
+        border: 1px solid $moon-sand;
         padding: .5rem .5rem 1.5rem .5rem;
         .best_novels {
             margin-top: -.5rem;
             margin-left: 1rem;
             width: 30%;
-            background-color: $sand;
+            background-color:$moon-sand;
             padding: .5rem;
             h3 {
                 margin: 0 0 1rem 0;
@@ -34,7 +34,7 @@
             border-radius: 3px;
             &.has_data {
                 border: 1px solid darkcyan;
-                background-color: $red;
+                background-color: $sky-blue;
                 color: black;
                 &:hover {
                     background-color: $orange;
