@@ -1,26 +1,86 @@
 .site_introduction { 
-    margin-top: .2rem;
+    margin: .2rem 0 2rem 0; 
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, 10rem);
     grid-column-gap: 5px;
-    .theme_intro {
-        grid-column: 1 / span 3;
-        grid-row: 1 / span 2;
-        padding: 0;
+    grid-template-areas: 
+    "intro intro quote"
+    "intro intro quote"
+    "history history quote"
+    "history history quote";
+    .theme_intro { 
+        grid-area: intro;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
         background-color: $sand;
         .theme_title {
+            border: 1px solid red;
+            // flex-basis: 40%;
+            width: 400px;
+            margin-right: 5rem;
             margin-top: 0; 
         }
+        .theme { 
+            // columns: 250px 2;
+// flex-basis: 60%;
+        }
     }
-    .recent_history {
-        grid-column: 1 / span 2;
-        grid-row: 3 / span 2;
+    .recent_history {padding: 1rem;
+        grid-area: history;   
+        display: flex; 
+        justify-content: space-between;
+        padding: 1rem;
+        background-color: $light-sand;
+        h3 {    
+            border: 1px solid red;
+            // border: 1px solid red;
+            // flex-basis: 40%;
+            width: 400px;
+            margin-right: 5rem;
+        }   
+        img { margin-left: 5rem;
+            // flex-basis: 20%;
+            order: 3;   
+            height: 250px;
+            display: block; margin-top: 1rem;
+        }
+        .publication {    
+            flex-basis: 60%;
+            .publication_meta {
+                margin-top: -1rem;;
+            }
+            .awards_meta {
+                display: flex;
+                span {
+                    display: block;
+                }
+                flex-direction: column;
+            }
+        }
     }
     .intro_quote {
-        // grid-column: 4 / span 5;
-        // grid-row: 1 / span 4;
+        grid-area: quote;
         padding: 0 .5rem;
-    
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        blockquote {  
+            border-bottom: 12px solid $neutral;
+            padding-left: 1rem;
+            font-size: 128%;
+            padding-top: 2rem;           
+            text-indent: -2rem;
+            border-top: 12px solid $neutral;
+            q {
+                margin-left: 1rem;
+            }
+            p {
+                margin-left: 2rem;
+                margin-bottom: 2rem;
+                padding-top: 1rem;
+            }
+        }
     }
 }
