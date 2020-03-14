@@ -9,13 +9,18 @@
     }
     #award_selector {
         display: flex;
-        flex-direction: column;
+        @media screen and (min-width: $min-screen-width){
+            flex-direction: row;
+        }
+        @media screen and (max-width: $max-screen-width){
+            flex-direction: column;
+        }
         flex-wrap: wrap;
         align-items: flex-start;
         justify-content: space-between;
         border: 1px solid $dark;
         border-radius: 0 0 0 5px;
-background-color: $xtra-light-moon-sand;
+        background-color: $xtra-light-moon-sand;
         padding: .5rem .5rem 1.5rem .5rem;
         #best_novels {
             display: grid;
@@ -24,7 +29,6 @@ background-color: $xtra-light-moon-sand;
             grid-column-gap: 5px;
             margin-top: -.5rem;
             background-color: $light-moon-sand;
-            ;
             padding: 0 .5rem .5rem .5rem;
             h3 { 
                 margin-bottom: .5rem;
@@ -49,9 +53,6 @@ background-color: $xtra-light-moon-sand;
                 &:hover {
                     background-color: $orange;
                 }
-            }
-            button:not(.has_data){
-                // border: 1px solid red;
             }
             .nebula_best_novel { 
                 grid-column: 1 / span 2;

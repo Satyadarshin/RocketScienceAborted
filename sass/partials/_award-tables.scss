@@ -1,24 +1,46 @@
 #awards {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    // grid-template-rows: 3rem 3rem 3rem;
     grid-column-gap: 20px;
     margin-top: -.5rem;
-    #award_selector {
-        grid-column: 1 / span 1;
-        grid-row: 1;
-    } 
-    #category_pane {
-        grid-column: 2 / span 2; 
-        grid-row: 1;
-        margin: 0;
-        padding: 1rem 0 2rem;
-        border-radius: 0 10px 10px 0;
-        border: 1px solid $neutral;
+    @media screen and (min-width: $min-screen-width){
+        /*
+        Styles for wide viewing contexts only
+        */
+        #award_selector {
+            grid-column: 1 / span 1;
+            grid-row: 1;
+        } 
+        #category_pane {
+            grid-column: 2 / span 2; 
+            grid-row: 1;
+        }
+    }
+    @media screen and (max-width: $max-screen-width){
+        /*
+        Styles for small viewing contexts only
+        */
+        #award_selector {
+            grid-column: 1 / span 3;
+            grid-row: 1;
+        } 
+        #category_pane {
+            grid-column: 1 / span 3; 
+            grid-row: 2;
+        }
     }
     .panel_active {
         box-shadow: 0px 0px 6px 2px rgb(32,32,32);
         transition: opacity 2s ease-in 1s;
+    }
+    /*
+    Styles common to all viewing contexts
+    */
+    #category_pane {
+        margin: 0;
+        padding: 1rem 0 2rem;
+        border-radius: 0 10px 10px 0;
+        border: 1px solid $neutral;
     }
     #category {
         width: 98%;
@@ -84,20 +106,20 @@
         }
     }
 }
-    .swoosh {
-        animation: swoosh 1s;
+.swoosh {
+    animation: swoosh 1s;
+}
+@keyframes swoosh {
+    0% {
+        opacity: 1;
     }
-    @keyframes swoosh {
-     0% {
-         opacity: 1;
-     }
-     50% {
-         opacity: .5;
-     }
-     90% {
-         opacity: 0;
-     }
-     100% {
-         display: none;
-     }
- }
+    50% {
+        opacity: .5;
+    }
+    90% {
+        opacity: 0;
+    }
+    100% {
+        display: none;
+    }
+}
